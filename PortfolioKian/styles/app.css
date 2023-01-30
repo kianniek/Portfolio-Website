@@ -21,6 +21,13 @@
   /*Portfolio colors + Projects*/
   --theme-color-TheLight: #ff6900;
   --theme-color-CloudWorkers: #004be8;
+
+  /*socials colors*/
+  --LinkedIn : #0A66C2;
+  --Twitter : #1DA1F2;
+  --Github : #6e5494;
+  --Twitch : #9146ff;
+  --Instagram : #fd5949;
 }
 
 /*Project color overrides*/
@@ -161,6 +168,7 @@ abbr[title] {
 }
 
 .social {
+  transform-origin: center;
   list-style: none;
   display: flex;
   align-items: center;
@@ -174,7 +182,24 @@ abbr[title] {
 }
 
 .social>li>a:hover {
-  color: var(--color-accent);
+  color: var(--color-text);
+  font-size: 5rem;
+}
+
+.social>li>a:hover .bi-linkedin {
+  color: var(--LinkedIn);
+}
+.social>li>a:hover .bi-github {
+  color: var(--Github);
+}
+.social>li>a:hover .bi-twitter {
+  color: var(--Twitter);
+}
+.social>li>a:hover .bi-twitch {
+  color: var(--Twitch);
+}
+.social>li>a:hover .bi-instagram {
+  color: var(--Instagram);
 }
 
 .section {
@@ -457,7 +482,7 @@ abbr[title] {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: contain;
-
+  /* background-image: url('assets/curve.png'); */
 }
 
 .hero__img img {
@@ -473,8 +498,8 @@ abbr[title] {
 .hero__imgCircle {
   margin: 0 auto;
   margin-top: -4rem;
-  height: 16rem;
-  width: 16rem;
+  height: 32rem;
+  width: 32rem;
   border: 0.5rem solid var(--color-main);
   border-radius: 50%;
 }
@@ -531,7 +556,7 @@ abbr[title] {
 
 .hero__social {
   position: absolute;
-  bottom: 0rem;
+  bottom: -4rem;
 }
 
 .hero__subtext {
