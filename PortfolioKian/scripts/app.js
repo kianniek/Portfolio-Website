@@ -7,7 +7,8 @@ const navButtonLinks = document.querySelectorAll('.navigation li a');
 
 const KianDOB = new Date("2004-04-30")
 
-window.onload = setAge(KianDOB)          
+window.onload = setAge(KianDOB)   
+window.onload = setCopyrightDate()       
 
 function setAge(date){
   let age = calculateAge(date);
@@ -21,6 +22,19 @@ function calculateAge(date)
   const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365)); 
   return age;
 }
+
+function setCopyrightDate(){
+  const d = new Date();
+  let year = d.getFullYear();
+  let string = "&copy ";
+  if(d == 2022){
+    string = "&copy ";
+  }else{
+    string = "&copy 2022-";
+  }
+  document.getElementById("copyright").innerHTML = string + year;
+}
+
 navButtonLinks.forEach(link => {
   link.addEventListener('click', () => {
     const navIconMenu = `<i class="bi bi-list"></i>`;
@@ -55,6 +69,7 @@ ScrollReveal().reveal('.about', { delay: 300 });
 ScrollReveal().reveal('.testimonials', { delay: 300 });
 ScrollReveal().reveal('.contact', { delay: 300 });
 
+/*
 // Splidejs Slide
 const splide = new Splide('.splide', {
   type: 'loop',
@@ -79,3 +94,4 @@ const splide = new Splide('.splide', {
 });
 
 splide.mount();
+*/

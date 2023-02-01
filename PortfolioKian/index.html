@@ -30,7 +30,7 @@
     <div class="animate__animated animate__slideInDown">
       <div class="container">
         <h1 class="header__logo">
-          <a href="index.html"> Kian </a>
+          <a href="#hero"> Kian </a>
         </h1>
         <nav class="navigation">
           <ul>
@@ -57,7 +57,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero"id="hero">
     <div class="container">
       <div class="hero__wrapper">
         <h1 class="hero__title animate__animated animate__slideInDown">
@@ -351,14 +351,14 @@
           </div>
         </div>
         <div class="contact__right">
-          <form class="contact__form" action="#" method="post">
+          <form class="contact__form" action="scripts/form.php" method="post">
             <div class="contact__fields">
               <label for="name">Name</label>
               <input type="name" name="name" id="name" placeholder="Your Name" />
             </div>
             <div class="contact__fields">
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Email Address" />
+              <input type="email" name="email" id="email" placeholder="Return Email Address" />
             </div>
             <div class="contact__fields">
               <label for="message">Message</label>
@@ -378,6 +378,7 @@
   <footer class="footer">
     <div class="footer__copyright">
       <p><a href="#">&hearts; Thanks for taking a look at my portfolio&hearts;</a></p>
+      <small><p id="copyright"></p></small>
     </div>
   </footer>
 
