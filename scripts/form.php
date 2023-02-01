@@ -2,6 +2,10 @@
 if(isset($_POST['submit'])){
     $to = "kianniek@hotmail.com"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
+      }
     $name = $_POST['name'];
     $subject = "Form submission";
     $subject2 = "Copy of your form submission";
