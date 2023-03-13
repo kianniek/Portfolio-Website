@@ -12,7 +12,10 @@ window.onload = setCopyrightDate()
 
 function setAge(date){
   let age = calculateAge(date);
-  document.getElementById('age').innerHTML = "Age: " +age ;  
+  if(document.getElementById('age') != null){
+
+    document.getElementById('age').innerHTML = "Age: " +age ;  
+  }
 }
 
 function calculateAge(date)

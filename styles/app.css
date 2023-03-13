@@ -29,7 +29,6 @@
   --Twitch : #9146ff;
   --Instagram : #fd5949;
 }
-
 /*Project color overrides*/
 
 .the-light {
@@ -320,6 +319,22 @@ abbr[title] {
   font-family: var(--font-special);
   font-weight: var(--font-bold);
   background: linear-gradient(180deg, #5dadec 35%, #ef9645 42%, #dd2e44 60%, #ef9645 65%, #ffdc5d 60%, #676cdb 72%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header__logo__Back>a {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 5.6rem;
+  line-height: 1;
+  font-family: var(--font-special);
+  font-weight: var(--font-bold);
+  background: linear-gradient(90deg, #5dadec 35%, #ef9645 42%, #dd2e44 60%, #ef9645 65%, #ffdc5d 60%, #676cdb 72%);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1158,6 +1173,7 @@ abbr[title] {
 .portfolioSingle {
   margin-top: 3rem;
   margin-bottom: 8rem;
+  color: var(--color-black);
 }
 
 .portfolioSingle__img {
@@ -1166,9 +1182,23 @@ abbr[title] {
 
 .portfolioSingle__img img {
   border-radius: 0.7rem;
-  height: 50vh;
+  height: 30rem;
   object-fit: cover;
   object-position: top center;
+}
+.portfolioSingle__img p {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -6.5rem);
+  text-align: center;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 1026px) {
+  .portfolioSingle__img {
+      display: none;
+  }
 }
 
 .portfolioSingle__stacks {
@@ -1222,18 +1252,34 @@ abbr[title] {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 8vw);
   grid-gap: 15px;
+  border-radius: 0.7rem;
 }
 
 .gallery__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0.7rem;
 }
 
 .gallery__vid {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0.7rem;
+}
+
+.gallery__vid__contain_Height {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.7rem;
+}
+.gallery__vid__contain_Width {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.7rem;
 }
 
 .gallery__item__image--1 {
@@ -1318,4 +1364,9 @@ abbr[title] {
   grid-column-end: 9;
   grid-row-start: 6;
   grid-row-end: 9;
+}
+
+.no-hyperlink{
+  text-decoration:none;
+  color: inherit !important; 
 }
