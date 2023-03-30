@@ -1,10 +1,9 @@
 {
-  "name": "elrich-bachman",
+  "name": "Kian Hamidi",
   "version": "1.0.0",
-  "description": "Portfolio templates for devfolio.io",
-  "main": "index.js",
-  "repository": "https://github.com/Mr-spShuvo/devfolio-templates",
-  "author": "Md. Shahriar Parvez<mr.spshuvo@gmail.com>",
+  "description": "Portfolio Kian Hamidi",
+  "main": "index.html",
+  "author": "Kian Hamidi <kianniek@hotmail.com>",
   "license": "MIT",
   "scripts": {
     "watch": "node-sass scss/app.scss styles/app.css -w",

@@ -21,6 +21,7 @@
   /*Portfolio colors + Projects*/
   --theme-color-TheLight: #ff6900;
   --theme-color-CloudWorkers: #004be8;
+  --theme-color-ChorisAnchos: #f1f3f0;
 
   /*socials colors*/
   --LinkedIn : #0A66C2;
@@ -40,16 +41,24 @@
   color: var(--color-light) !important;
 }
 
+.choris-Anchos {
+  background-color: var(--theme-color-ChorisAnchos) !important;
+  color: #9a4a72 !important;
+	text-shadow: 0 0;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-family);
-  text-rendering: optimizeLegibility;
-  color: inherit;
-  font-size: inherit;
-  scroll-behavior: smooth;
-  scroll-padding-top: 7rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    text-rendering: optimizeLegibility;
+    color: inherit;
+    font-size: inherit;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 html {
@@ -114,37 +123,30 @@ abbr[title] {
 }
 
 .button__itch {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  display: inline-block;
-
-  background: var(--color-orange);
-  color: var(--color-lighter);
-
-  text-decoration: none;
-
-  padding: 0 0.75rem;
-  font-size: 1.5rem;
-
-  text-shadow: 0 1px 0 var(--color-black);
-  background: var(--color-black, var(--color-orange));
-  color: var(--color-light, --color-lighter);
-  text-shadow: 0 1px 0 var(--color-black, var(--color-orange));
-
-  cursor: pointer;
-  border: none;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 1px rgb(255 255 255 / 21%);
-  text-align: center;
-  line-height: 3rem;
-  font-weight: bold;
-  height: 3rem;
-
-  transform-origin: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: inline-block;
+    background: var(--color-orange);
+    color: var(--color-lighter);
+    text-decoration: none;
+    padding: 0 0.75rem;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 0 var(--color-black);
+    background: var(--color-black, var(--color-orange));
+    color: var(--color-light, --color-lighter);
+    text-shadow: 0 1px 0px --color-black,var( --color-orange ) );
+    cursor: pointer;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 1px rgb(255 255 255 / 21%);
+    text-align: center;
+    line-height: 3rem;
+    font-weight: bold;
+    height: 3rem;
+    transform-origin: center;
 }
 
 .btn {
@@ -208,7 +210,7 @@ abbr[title] {
 }
 
 .section__header {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 .section__header--center {
@@ -477,15 +479,15 @@ abbr[title] {
 }
 
 .hero {
+  padding-bottom: 0rem;
   position: relative;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero__wrapper {
-  margin-top: 0rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -495,9 +497,10 @@ abbr[title] {
 }
 
 .hero__img {
-  margin-top: 6rem;
+  margin-top: 1rem;
+  max-resolution: 6rem;
   width: 100%;
-  height: 40vh;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: contain;
@@ -507,7 +510,7 @@ abbr[title] {
 .hero__img img {
   object-fit: cover;
   object-position: center;
-  width: 100%;
+  width: auto;
   height: 100%;
   border-radius: 50%;
   line-height: 0;
@@ -516,7 +519,6 @@ abbr[title] {
 
 .hero__imgCircle {
   margin: 0 auto;
-  margin-top: -4rem;
   height: 32rem;
   width: 32rem;
   border: 0.5rem solid var(--color-main);
@@ -575,7 +577,6 @@ abbr[title] {
 
 .hero__social {
   position: relative;
-  bottom: -4rem;
 }
 
 .hero__subtext {
@@ -793,8 +794,9 @@ abbr[title] {
   border-radius: 0.7rem;
 }
 
+
 .portfolio__img a {
-  border-radius: 0.7rem;
+    border-radius: 7rem;
 }
 
 .portfolio__title_less_important {
@@ -1318,6 +1320,12 @@ abbr[title] {
 }
 
 .gallery__item__image--6 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+.gallery__item__image--7 {
   grid-column-start: 5;
   grid-column-end: 9;
   grid-row-start: 6;
