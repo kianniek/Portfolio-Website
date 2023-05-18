@@ -826,6 +826,7 @@ abbr[title] {
 
 .portfolio__content {
     margin-bottom: 1rem;
+    color: var(--color-text);
 }
 
 .portfolio__contentSideNote {
