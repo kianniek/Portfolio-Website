@@ -1340,6 +1340,30 @@ abbr[title] {
     grid-row-start: 6;
     grid-row-end: 9;
 }
+.gallery__item__image--8 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 9;
+    grid-row-end: 14;
+}
+.gallery__item__image--9 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 9;
+    grid-row-end: 14;
+}
+.gallery__item__image--10 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 14;
+    grid-row-end: 17;
+}
+.gallery__item__image--11 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 14;
+    grid-row-end: 16;
+}
 
 .gallery__item__vid--1 {
     grid-column-start: 1;
