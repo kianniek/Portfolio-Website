@@ -8495,7 +8495,7 @@ a.text-dark:hover, a.text-dark:focus {
   width: 27rem;
   flex-shrink: 0;
   border-radius: 31.25rem;
-  background: url(images/35x35.gif) lightgray 50% / cover no-repeat;
+  background: url(images/35X35.gif) lightgray 50% / cover no-repeat;
 }
 .about > div > .imageBackground {
   width: 27rem;
@@ -8731,7 +8731,7 @@ text-transform: uppercase;
 .card-testimonial {
   display: flex;
   width: 41rem;
-  height: 27.0625rem;
+  height: fir-content;
   padding: 1.5rem;
   flex-direction: column;
   align-items: flex-start;
