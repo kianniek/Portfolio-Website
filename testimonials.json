@@ -1,0 +1,18 @@
+[
+    {
+        "name": "anastasiapiano",
+		"logoImg": "images/35X35.gif",
+        "country": "Greece",
+        "testimonial": "Kian was a high level professional, with a personal style ( that's why I chose him of all available sellers ) ,met all my needs and requirements, responded on time. Had patience with all my notes, kept asking until he understood what I was asking or requesting, integrated his own ideas which helped me and gave me a clearer view of what I wanted and needed, took initiative and delivered it by bringing fresh ideas, paid close attention to details and never complaint. He was just trying always to figure out what was the product I was imagining in my head and how he could design and produce it. Highly recommend him!",
+        "source": "Website",
+        "date": "2023-01-01"
+    },
+    {
+        "name": "garrieramos",
+        "country": "United Kingdom",
+		"logoImg": "images/35X35.gif",
+        "testimonial": "Amazing. Met all my needs and did it so fast as well. 100% Recommend",
+        "source": "Blog",
+        "date": "2023-02-15"
+    }
+]
