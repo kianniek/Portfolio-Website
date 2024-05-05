@@ -1,0 +1,55 @@
+[{
+    "title": "Game Development",
+    "description": "Leveraging my extensive experience as a solo developer, I specialize in creating engaging and dynamic video games from concept to launch. My expertise encompasses gameplay mechanics, story development, and interactive design, ensuring a captivating experience for gamers.",
+    "includes": [
+      "Custom Gameplay Mechanics: Designing unique gameplay elements that set your game apart.",
+      "Story Development: Crafting compelling narratives that resonate with players, enhancing the gaming experience.",
+      "Level Design: Constructing immersive and challenging environments that engage and retain players.",
+      "UI/UX Design: Creating intuitive and attractive user interfaces and experiences.",
+      "Programming: Writing clean, efficient code for game logic, physics, and character interactions.",
+      "Testing & Debugging: Rigorous testing phases to ensure a smooth, bug-free game experience upon launch."
+    ],
+    "bigImage": "images/200x200.gif",
+    "smallImage": "images/35X35.gif"
+  },
+  {
+    "title": "Immersive Development & Design",
+    "description": "Specializing in the creation and design of immersive experiences, I utilize the latest technologies in Virtual-, Augmented- and Mixed reality to craft environments and narratives that transport users to other worlds. My work focuses on interactivity, spatial design, and user engagement, offering unforgettable experiences.",
+    "includes": [
+      "VR/AR Experience Design: Designing immersive virtual and augmented reality experiences that captivate and engage users.",
+      "Spatial Audio Design: Implementing spatial audio to enhance immersion and realism in virtual environments.",
+      "User Experience Design: Focusing on user comfort, accessibility, and engagement to design seamless experiences.",
+      "Prototyping and Testing: Developing prototypes for user testing, feedback, and iterative improvement."
+
+    ],
+    "bigImage": "images/200x200.gif",
+    "smallImage": "images/35X35.gif"
+  },
+  {
+    "title": "Technical Artist",
+    "description": "As a technical artist, I bridge the gap between art and code, specializing in shader development, procedural generation, and optimization for real-time engines. My work enhances visual fidelity while maintaining performance, pushing the boundaries of digital artistry.",
+    "includes": [
+      "Shader Development: Crafting custom shaders that bring visuals to life with stunning effects and realism.",
+      "Procedural Generation: Implementing algorithms for generating landscapes, textures, and patterns, making each digital experience unique.",
+      "Performance Optimization: Ensuring that visual assets are optimized for peak performance across platforms.",
+      "Rigging and Skinning: Creating and fine-tuning rigs for characters and objects to ensure smooth animations.",
+      "Technical Support: Providing ongoing support to artists and developers, solving technical challenges in the art pipeline."
+    ],
+    "bigImage": "images/200x200.gif",
+    "smallImage": "images/35X35.gif"
+  },
+  {
+    "title": "3D Animation",
+    "description": "Specializing in 3D animation for products and motion capture cleanup, I bring precision and lifelike movement to digital creations. My expertise ensures that product animations are engaging and realistic, enhancing marketing efforts and storytelling.",
+    "includes": [
+      "Product Animation: Creating high-quality animations that showcase products in dynamic, eye-catching ways.",
+      "Motion Capture Cleanup: Refining motion capture data to achieve smooth and accurate animations.",
+      "Visual Effects: Adding visual effects that complement the product’s features and overall animation.",
+      "Rendering: Producing high-resolution renders that highlight the product’s best angles and features.",
+      "Storyboarding: Developing storyboards to visualize and plan animations for maximum impact."
+
+    ],
+    "bigImage": "images/200x200.gif",
+    "smallImage": "images/35X35.gif"
+  }
+]
