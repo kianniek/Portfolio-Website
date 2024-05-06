@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () { // Fetch the testimonials from a JSON file
-	console.log("test");
+document.addEventListener('DOMContentLoaded', function () { 
+  // Fetch the testimonials from a JSON file
   fetch('testimonials.json')
     .then(response => response.json())
     .then(data => {

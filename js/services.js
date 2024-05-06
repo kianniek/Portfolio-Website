@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
         wrapper.appendChild(card);
 
         // Add separation line after each card except the last one
-        if (index !== array.length - 1) {
+        //if (index !== array.length - 1) {
           const separationLine = document.createElement('div');
           separationLine.className = 'service-separation_line';
           wrapper.appendChild(separationLine);
-        }
+        //}
       });
     })
     .catch(error => console.error('Error loading the services:', error));
