@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Fetch the services from a JSON file
-  fetch('services.json')
+  fetch('data/services.json')
     .then(response => response.json())
     .then(data => {
       // Select the services wrapper

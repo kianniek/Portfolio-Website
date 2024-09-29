@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () { 
+document.addEventListener('DOMContentLoaded', function () {
   // Fetch the testimonials from a JSON file
-  fetch('testimonials.json')
+  fetch('data/testimonials.json')
     .then(response => response.json())
     .then(data => {
       // Select the testimonial wrapper

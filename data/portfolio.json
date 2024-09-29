@@ -1,0 +1,20 @@
+{
+    "about": {
+        "text": "Hi, I'm a passionate game developer with experience in creating immersive experiences and technical art."
+    },
+    "projects": [
+        {
+            "title": "Game Project 1",
+            "description": "A game about exploration and adventure.",
+            "image": "images/project1.jpg"
+        },
+        {
+            "title": "Game Project 2",
+            "description": "A fast-paced puzzle game.",
+            "image": "images/project2.jpg"
+        }
+    ],
+    "contact": {
+        "text": "Feel free to reach out at your.email@example.com for any inquiries or collaborations."
+    }
+}
