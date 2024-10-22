@@ -1,34 +1,114 @@
 /* Extra small devices (phones, less than 576px) */
-@media (min-width: 576px) {
+@media (max-width: 576px) {
+   .services-card{
+    width: 100%;
+   }
 
+   .services-text-wrapper{
+    width: 100%;
+   }
+
+   .service-image-big{
+    display: none;
+   }
+
+   .service-image-small{
+    display: none;
+   }
 }
 
 /* Small devices (tablets, 576px and up) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+   .services-card{
+    width: 100%;
+   }.services-text-wrapper{
+    width: 100%;
+   }
 
+   .service-image-big{
+    display: none;
+   }
+
+   .service-image-small{
+    display: none;
+   }
 }
 
 /* Medium devices (desktops, 768px and up) */
-@media (min-width: 992px) {
+@media (max-width: 992px) {
+  .items {
+    padding: 0;
+  }
+  .about{
+    flex-direction: row;
+   }
+   .services-card{
+    width: 100%;
+   }.services-text-wrapper{
+    width: 100%;
+   }
 
+   .service-image-big{
+    display: none;
+   }
+
+   .service-image-small{
+    display: none;
+   }
 }
 
 /* Large devices (larger desktops, 992px and up) */
-@media (min-width: 1200px) {
-
-}
-
-/* Extra large devices (1200px and up) */
-@media (min-width: 1400px) {
+@media (max-width: 1200px) {
   .items {
     padding: 0rem 5vw;
   }
+ .about{
+  flex-direction: column;
+  justify-content: center;
+ }
+ .services-card{
+  width: 100%;
+ }.services-text-wrapper{
+  width: 100%;
+ }
+
+ .service-image-big{
+  display: none;
+ }
+
+ .service-image-small{
+  display: none;
+ }
+}
+
+/* Extra large devices (1200px and up) */
+@media (max-width: 1400px) {
+  .items {
+    padding: 0rem 5vw;
+  }
+   .services-card{
+    width: 100%;
+   }.services-text-wrapper{
+    width: 100%;
+   }
+
+   .service-image-big{
+    display: none;
+   }
+
+   .service-image-small{
+    display: none;
+   }
 }
 
 @media (min-width: 1800px) {
   .items {
     padding: 0rem 15vw;
   }
+  .about{
+    flex-direction: row;
+   }
+
 }
 
 @media (min-width: 2000px) {
@@ -38,4 +118,7 @@
   .services-headline-wrapper{
     padding: 0 0 0 35rem;
   }
+  .about{
+    flex-direction: row;
+   }
 }

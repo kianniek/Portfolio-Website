@@ -19,7 +19,7 @@
         class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"> <a class="nav-link" href="#about">ABOUT ME&nbsp; <span
+        <li class="nav-item"> <a class="nav-link" href="#about">ABOUT ME&nbsp; <span
               class="sr-only">(current)</span></a> </li>
         <li class="nav-item"> <a class="nav-link" href="portfolio.html">PORTFOLIO</a> </li>
         <li class="nav-item"> <a class="nav-link" href="#offer">SKILLS</a> </li>
@@ -95,18 +95,24 @@
         <p class="headline-2">My latest work</p>
       </div>
       <div class="project-card">
-        <div class="image-group"> <img src="images/400x400.gif" alt="Logo 2"> </div>
+        <div class="image-group">
+          <img id="project-image" src="images/400x400.gif" alt="Project Image">
+        </div>
         <div class="textWrapper-projectCard">
-          <div class="arrows-projectCard"> <img src="images/Arrow Left.svg"> <img src="images/Arrow Right.svg"> </div>
+          <div class="arrows-projectCard">
+            <!-- Add unique IDs for both arrow images -->
+            <img id="prev-arrow" src="images/Arrow Left.svg" alt="Previous Project" class="clickable-arrow">
+            <img id="next-arrow" src="images/Arrow Right.svg" alt="Next Project" class="clickable-arrow">
+          </div>
           <div class="headerText-projectCard">
             <div class="tagline-textWrapper">
-              <p class="projectTagline-textWrapper">Game Design</p>
+              <p id="project-tagline" class="projectTagline-textWrapper">Game Design</p>
             </div>
-            <p class="textWrapper-titleOfProject">TitleOfProject</p>
+            <p id="project-title" class="textWrapper-titleOfProject">TitleOfProject</p>
           </div>
-          <p class="textWrapper-discription">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+          <p id="project-description" class="textWrapper-discription">
             Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-            Lorem Ipsum </p>
+          </p>
         </div>
       </div>
     </div>
@@ -122,9 +128,9 @@
         <script src="js/testimonials.js"></script>
       </div>
     </div>
-    </div>
   </section>
   <div class="section-divider"></div>
+
   <section id="services">
     <div class="services">
       <div class="services-headline-wrapper">
@@ -135,6 +141,7 @@
         <script src="js/services.js"></script>
       </div>
   </section>
+
   <section id="offer">
     <div class="offer">
       <div class="items">
@@ -264,6 +271,7 @@
   <script src="js/bootstrap-4.4.1.js"></script>
   <script src="js/style-js.js"></script>
   <script src="js/restoreScroll.js"></script>
+  <script src="js/portfolioSectionCaroucel"></script>
 </body>
 
 </html>

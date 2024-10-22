@@ -1,6 +1,6 @@
 [{
     "title": "Game Development",
-    "description": "Leveraging my extensive experience as a solo developer, I specialize in creating engaging and dynamic video games from concept to launch. My expertise encompasses gameplay mechanics, story development, and interactive design, ensuring a captivating experience for gamers.",
+    "description": "Leveraging my extensive experience as a developer, I specialize in creating engaging and dynamic video games from concept to launch. My expertise encompasses gameplay mechanics, story development, and interactive design, ensuring a captivating experience for gamers.",
     "includes": [
       "Custom Gameplay Mechanics: Designing unique gameplay elements that set your game apart.",
       "Story Development: Crafting compelling narratives that resonate with players, enhancing the gaming experience.",
@@ -35,8 +35,8 @@
       "Rigging and Skinning: Creating and fine-tuning rigs for characters and objects to ensure smooth animations.",
       "Technical Support: Providing ongoing support to artists and developers, solving technical challenges in the art pipeline."
     ],
-    "bigImage": "images/200x200.gif",
-    "smallImage": "images/35X35.gif"
+    "bigImage": "images/projects/3DModels/FreeTimeWork/Bloeiend2.jpg",
+    "smallImage": "images/projects/GPE/Unity_jfwpvURcYu.gif"
   },
   {
     "title": "3D Animation",
@@ -49,7 +49,7 @@
       "Storyboarding: Developing storyboards to visualize and plan animations for maximum impact."
 
     ],
-    "bigImage": "images/200x200.gif",
-    "smallImage": "images/35X35.gif"
+    "bigImage": "images/projects/3DModels/FreelanceWork/Starpose.png",
+    "smallImage": "images/projects/3DModels/FreelanceWork/ShirtAndSweaterV40000-0480.gif"
   }
 ]

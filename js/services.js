@@ -1,10 +1,13 @@
+var useImages = true;
+
 document.addEventListener('DOMContentLoaded', function () {
+  // Select the services wrapper
+  const wrapper = document.querySelector('.services-wrapper');
+
   // Fetch the services from a JSON file
   fetch('data/services.json')
     .then(response => response.json())
     .then(data => {
-      // Select the services wrapper
-      const wrapper = document.querySelector('.services-wrapper');
 
       // Loop through each service and add it to the page
       data.forEach((service, index, array) => {
@@ -12,11 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const card = document.createElement('div');
         card.className = index % 2 === 0 ? 'services-card flex-row' : 'services-card flex-row-reverse';
 
-        // Create and add the big service image
-        const bigImage = document.createElement('img');
-        bigImage.className = 'service-image-big';
-        bigImage.src = service.bigImage;
-        card.appendChild(bigImage);
+        // Conditionally create and add the big service image
+        if (useImages) {
+          const bigImage = document.createElement('img');
+          bigImage.className = 'service-image-big';
+          bigImage.src = service.bigImage;
+          card.appendChild(bigImage);
+        }
 
         // Create the services text wrapper
         const textWrapper = document.createElement('div');
@@ -55,22 +60,26 @@ document.addEventListener('DOMContentLoaded', function () {
         // Append text wrapper to card
         card.appendChild(textWrapper);
 
-        // Create and add the small service image
-        const smallImage = document.createElement('img');
-        smallImage.className = 'service-image-small';
-        smallImage.src = service.smallImage;
-        card.appendChild(smallImage);
+        // Conditionally create and add the small service image
+        if (useImages) {
+          const smallImage = document.createElement('img');
+          smallImage.className = 'service-image-small';
+          smallImage.src = service.smallImage;
+          card.appendChild(smallImage);
+        }
 
         // Append the card to the services wrapper
         wrapper.appendChild(card);
 
         // Add separation line after each card except the last one
-        //if (index !== array.length - 1) {
-          const separationLine = document.createElement('div');
-          separationLine.className = 'service-separation_line';
-          wrapper.appendChild(separationLine);
-        //}
+        const separationLine = document.createElement('div');
+        separationLine.className = 'service-separation_line';
+        wrapper.appendChild(separationLine);
       });
     })
     .catch(error => console.error('Error loading the services:', error));
 });
+
+function SetImageVisibility(state){
+  useImages = state;
+}
