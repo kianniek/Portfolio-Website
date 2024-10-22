@@ -1,0 +1,60 @@
+document.addEventListener('DOMContentLoaded', function () {
+  // Fetch the JSON data
+  fetch('data/portfolio.json') // Adjust the path to where your JSON file is located
+      .then(response => response.json()) // Parse the JSON data
+      .then(data => {
+          let projects = data.projects;
+          let currentIndex = 0;
+
+          // Sort options
+          const customOrder = ["012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
+          const hiddenProjects = ["012", "011"];
+
+          // Function to sort by custom array of IDs
+          const sortByCustomOrder = (a, b) => {
+              const indexA = customOrder.indexOf(a.ID);
+              const indexB = customOrder.indexOf(b.ID);
+              return indexA - indexB;
+          };
+
+          // Exclude hidden projects
+          projects = projects.filter(project => !hiddenProjects.includes(project.ID));
+
+          // Apply sorting: custom sorting is prioritized
+          if (customOrder.length > 0) {
+              projects.sort(sortByCustomOrder);
+          }
+
+          const projectImage = document.getElementById('project-image');
+          const projectTitle = document.getElementById('project-title');
+          const projectDescription = document.getElementById('project-description');
+
+          function updateProject(index) {
+              const project = projects[index];
+              projectImage.src = project.image;
+              projectTitle.textContent = project.title;
+              projectDescription.innerHTML = `
+                  ${project.description.substring(0, 150)}...
+                  <a href="portfolio.html?id=${project.ID}&openContext=true" class="read-more-btn">Read More</a>
+              `;
+              projectImage.style.backgroundColor = project.color;
+          }
+
+          // Event listeners for next and previous arrows
+          document.getElementById('next-arrow').addEventListener('click', function () {
+              currentIndex = (currentIndex + 1) % projects.length;
+              updateProject(currentIndex);
+          });
+
+          document.getElementById('prev-arrow').addEventListener('click', function () {
+              currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+              updateProject(currentIndex);
+          });
+
+          // Initial project update
+          updateProject(currentIndex);
+      })
+      .catch(error => {
+          console.error('Error fetching the JSON file:', error);
+      });
+});
