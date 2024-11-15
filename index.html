@@ -8,7 +8,6 @@
   <title>Kian Hamidi Portfolio</title>
   <!-- Bootstrap -->
   <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-scaleChanges.css" rel="stylesheet">
 </head>
 
 <body>
@@ -35,16 +34,67 @@
         <div class="row">
           <div class="col-12">
             <p class="p-introduction">👋 Hey, I am Kian</p>
-            <h1 class="h1-introduction">GAME DEVELOPER</h1>
-            <h1 class="h1-introduction h1-introduction-2">Based In Amsterdam</h1>
+            <div class="h1-introduction-textwrapper">
+              <h1 class="h1-introduction">GAME</h1>
+              <h1 class="h1-introduction">DEVELOPER</h1>
+            </div>
+            <h2 class="h1-introduction-2">Based In Amsterdam</h2>
           </div>
         </div>
         <div class="container collum">
-          <p><a class="btn btn-primary" href="#portfolio" role="button">MY WORKS</a></p>
-          <p><a class="btn btn-secondary" href="#contact" role="button">LETS TALK</a></p>
+          <a class="btn btn-primary" href="#portfolio" role="button">MY WORKS</a>
+          <a class="btn btn-secondary" href="#contact" role="button">LETS TALK</a>
         </div>
       </div>
     </div>
+    <script>
+      // Function to initialize and store the initial font size if not already set
+      function initializeFontSize(element) {
+        if (!element.hasAttribute('data-initial-font-size')) {
+          const initialFontSize = parseFloat(window.getComputedStyle(element).fontSize);
+          element.setAttribute('data-initial-font-size', initialFontSize); // Store initial font size
+        }
+      }
+
+      // Function to adjust font size for a single element without exceeding initial font size
+      function adjustFontSize(element) {
+        const parent = element.parentElement;
+        const initialFontSize = parseFloat(element.getAttribute('data-initial-font-size'));
+        let fontSize = initialFontSize; // Reset to the initial font size on each resize
+        console.log(element.offsetWidth + " | " + parent.offsetWidth);
+        element.style.fontSize = `${fontSize}px`;
+
+        // Reduce font size until it fits within the parent's width, but don't go below initial size
+        while (element.offsetWidth > parent.offsetWidth && fontSize > 1) {
+          fontSize -= 1;
+          element.style.fontSize = `${fontSize}px`;
+        }
+      }
+
+      // Function to adjust font size for all elements with the provided selector
+      function adjustFontSizeForAll(selector) {
+        const elements = document.querySelectorAll(selector);
+
+        elements.forEach(element => {
+          initializeFontSize(element); // Set initial font size once
+          adjustFontSize(element); // Adjust font size if needed
+        });
+      }
+
+      // Initial call for adjusting font size on DOM load
+      window.addEventListener('DOMContentLoaded', () => {
+        adjustFontSizeForAll('.h1-introduction');
+        adjustFontSizeForAll('.h1-introduction-2');
+        adjustFontSizeForAll('.p-introduction');
+      });
+
+      // Adjust font sizes again on window resize
+      window.addEventListener('resize', () => {
+        adjustFontSizeForAll('.h1-introduction');
+        adjustFontSizeForAll('.h1-introduction-2');
+        adjustFontSizeForAll('.p-introduction');
+      });
+    </script>
     <div class="carousel-container">
       <div class="carousel"> <img src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg"
           alt="Logo 2"> <img src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
@@ -63,8 +113,8 @@
           src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
           src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
           src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> 
-        </div>
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2">
+      </div>
     </div>
     <div class="hero-section-divider">
       <div class="section-divider-line"></div>
@@ -73,7 +123,7 @@
 
   <section id="about">
     <div class="about">
-      <div>
+      <div class="aboutImage">
         <div class="imageBackground"></div>
         <img src="images/KianHamidi.jpg" alt="Image of Kian Hamidi">
       </div>
@@ -184,84 +234,85 @@
               </div>
               <div class="footer-item">
                 <div class="footer-subtitle">Mail:</div>
-                <a class="footer-paragraph-light" href="mailto:kianniek@hotmail.com?body=Send%20From%20Website%20Mail%20Link">kianniek@hotmail.com</a>
-              </div>
+                <a class="footer-paragraph-light"
+                  href="mailto:kianniek@hotmail.com?body=Send%20From%20Website%20Mail%20Link">kianniek@hotmail.com</a>
               </div>
             </div>
           </div>
-          <div class="footer-input-form-wrapper">
-            <div class="footer-input-wrapper-horizontal">
-              <div class="footer-input-wrapper">
-                <div class="footer-bold-text">First Name</div>
-                <div class="footer-input-field">
-                  <div class="footer-small-text">Your First Name</div>
-                </div>
-              </div>
-              <div class="footer-input-wrapper">
-                <div class="footer-bold-text">Last Name</div>
-                <div class="footer-input-field">
-                  <div class="footer-small-text">Your Last Name</div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="footer-input-form-wrapper">
+          <div class="footer-input-wrapper-horizontal">
             <div class="footer-input-wrapper">
-              <div class="footer-bold-text">Email Address</div>
+              <div class="footer-bold-text">First Name</div>
               <div class="footer-input-field">
-                <div class="footer-small-text">Email Address</div>
+                <div class="footer-small-text">Your First Name</div>
               </div>
             </div>
             <div class="footer-input-wrapper">
-              <div class="footer-bold-text">Select Service</div>
-              <div class="footer-items">
-                <div class="footer-item-group">
-                  <div class="footer-item">
-                    <div class="footer-ellipse"></div>
-                    <div class="footer-small-text">Graphic Design</div>
-                  </div>
-                  <div class="footer-item">
-                    <div class="footer-ellipse"></div>
-                    <div class="footer-small-text">Game Development</div>
-                  </div>
+              <div class="footer-bold-text">Last Name</div>
+              <div class="footer-input-field">
+                <div class="footer-small-text">Your Last Name</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bold-text">Email Address</div>
+            <div class="footer-input-field">
+              <div class="footer-small-text">Email Address</div>
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bold-text">Select Service</div>
+            <div class="footer-items">
+              <div class="footer-item-group">
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">Graphic Design</div>
                 </div>
-                <div class="footer-item-group">
-                  <div class="footer-item">
-                    <div class="footer-ellipse"></div>
-                    <div class="footer-small-text">3D Modeling & Animation</div>
-                  </div>
-                  <div class="footer-item">
-                    <div class="footer-ellipse"></div>
-                    <div class="footer-small-text">Website Design</div>
-                  </div>
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">Game Development</div>
+                </div>
+              </div>
+              <div class="footer-item-group">
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">3D Modeling & Animation</div>
+                </div>
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">Website Design</div>
                 </div>
               </div>
             </div>
-            <div class="footer-input-wrapper">
-              <div class="footer-bold-text">Message</div>
-              <div class="footer-input-field message">
-                <div class="footer-small-text">Write your message here</div>
-              </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bold-text">Message</div>
+            <div class="footer-input-field message">
+              <div class="footer-small-text">Write your message here</div>
             </div>
-            <div class="footer-input-wrapper">
-              <div class="footer-button">
-                <div class="footer-button-text">Submit</div>
-              </div>
-              <div class="footer-terms">
-                By submitting this form you read and agree to the Terms & Conditions and our privacy policy.
-              </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-button">
+              <div class="footer-button-text">Submit</div>
             </div>
-            <div class="footer-input-wrapper">
-              <div class="footer-bottom-bar">
-                <div class="footer-logo">Kian Hamidi</div>
-                <div class="footer-copyright">{Copyright}</div>
-                <div class="footer-link-wrapper">
-                  <div class="footer-link">Privacy Policy</div>
-                  <div class="footer-link">Cookie Policy</div>
-                </div>
+            <div class="footer-terms">
+              By submitting this form you read and agree to the Terms & Conditions and our privacy policy.
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bottom-bar">
+              <div class="footer-logo">Kian Hamidi</div>
+              <div class="footer-copyright">{Copyright}</div>
+              <div class="footer-link-wrapper">
+                <div class="footer-link">Privacy Policy</div>
+                <div class="footer-link">Cookie Policy</div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </footer>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -270,7 +321,7 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap-4.4.1.js"></script>
   <script src="js/style-js.js"></script>
-  <script src="js/restoreScroll.js"></script>
+  <!-- <script src="js/restoreScroll.js"></script> -->
   <script src="js/portfolioSectionCaroucel"></script>
 </body>
 

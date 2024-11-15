@@ -9,8 +9,10 @@
       "Programming: Writing clean, efficient code for game logic, physics, and character interactions.",
       "Testing & Debugging: Rigorous testing phases to ensure a smooth, bug-free game experience upon launch."
     ],
-    "bigImage": "images/200x200.gif",
-    "smallImage": "images/35X35.gif"
+    "bigImage": "",
+    "smallImage": "",
+    "bigImageDescription": "",
+    "smallImageDescription": ""
   },
   {
     "title": "Immersive Development & Design",
@@ -22,8 +24,10 @@
       "Prototyping and Testing: Developing prototypes for user testing, feedback, and iterative improvement."
 
     ],
-    "bigImage": "images/200x200.gif",
-    "smallImage": "images/35X35.gif"
+    "bigImage": "",
+    "smallImage": "",
+    "bigImageDescription": "",
+    "smallImageDescription": ""
   },
   {
     "title": "Technical Artist",
@@ -36,20 +40,23 @@
       "Technical Support: Providing ongoing support to artists and developers, solving technical challenges in the art pipeline."
     ],
     "bigImage": "images/projects/3DModels/FreeTimeWork/Bloeiend2.jpg",
-    "smallImage": "images/projects/GPE/Unity_jfwpvURcYu.gif"
+    "smallImage": "images/projects/GPE/Unity_jfwpvURcYu.gif",
+    "bigImageDescription": "Made with Blender, using procedural generation to distribute flowers and grass across a model.",
+    "smallImageDescription": "Procedural generated a wall in Unity using a compute shader."
   },
   {
-    "title": "3D Animation",
+    "title": "3D Composition & Animation",
     "description": "Specializing in 3D animation for products and motion capture cleanup, I bring precision and lifelike movement to digital creations. My expertise ensures that product animations are engaging and realistic, enhancing marketing efforts and storytelling.",
     "includes": [
       "Product Animation: Creating high-quality animations that showcase products in dynamic, eye-catching ways.",
       "Motion Capture Cleanup: Refining motion capture data to achieve smooth and accurate animations.",
       "Visual Effects: Adding visual effects that complement the product’s features and overall animation.",
-      "Rendering: Producing high-resolution renders that highlight the product’s best angles and features.",
-      "Storyboarding: Developing storyboards to visualize and plan animations for maximum impact."
+      "Rendering: Producing high-resolution renders that highlight the product’s best angles and features."
 
     ],
     "bigImage": "images/projects/3DModels/FreelanceWork/Starpose.png",
-    "smallImage": "images/projects/3DModels/FreelanceWork/ShirtAndSweaterV40000-0480.gif"
+    "smallImage": "images/projects/3DModels/FreelanceWork/ShirtAndSweaterV40000-0480.gif",
+    "bigImageDescription": "Integrated a clients visual identity into a 3D model.",
+    "smallImageDescription": "Made 3D models of a concept shirt and sweater for a client."
   }
 ]

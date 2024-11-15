@@ -14,7 +14,7 @@
             "language": ["C#"],
             "programs": ["Visual Studio", "Adobe Photoshop", "Aseprite", "MonoGame Framework"],
             "team_size": 1,
-            "role": "Solo Developer",
+            "role": ["Solo Developer"],
             "link": "https://github.com/kianniek/Imp-Hunter"
         },
         {
@@ -23,7 +23,7 @@
             "description": "Mountain Climbers is a couch co-op platformer inspired by the classic Nintendo game Ice Climbers, where players must work together to explore the game world. In this cooperative adventure, teamwork is essential, as players use ropes and each other to overcome obstacles and reach new areas. The game's design emphasizes collaboration, requiring players to coordinate their actions, whether by helping each other climb or solving puzzles together. With its focus on cooperative mechanics, Mountain Climbers offers a unique and engaging experience, challenging players to communicate and strategize to progress through the levels.",
             "image": "images/projects/Mountain Climbers/MainMenu.png",
             "color": "#ec9235",
-            "role": "Lead Developer, Designer, Project Manager",
+            "role": ["Lead Developer", "Designer", "Project Manager"],
             "team_size": 4,
             "timeline": "Year 1 - Project Agile Game Development",
             "engine": "MonoGame",
@@ -43,7 +43,7 @@
             "language": ["C#"],
             "programs": ["Adobe Photoshop", "Blender"],
             "team_size": 1,
-            "role": "Researcher",
+            "role": ["Researcher"],
             "github": "https://github.com/kianniek/tiles-of-chick-island"
         },
         {
@@ -58,7 +58,7 @@
             "language": ["C#"],
             "programs": ["Aseprite"],
             "team_size": 1,
-            "role": "Researcher",
+            "role": ["Researcher"],
             "github": "https://github.com/kianniek/the-flocking-dead-AI"
         },
         {
@@ -73,7 +73,7 @@
             "language": ["C#"],
             "programs": ["Aseprite"],
             "team_size": 1,
-            "role": "Researcher",
+            "role": ["Researcher"],
             "github": "https://github.com/kianniek/Treespire"
         },
         {
@@ -87,7 +87,7 @@
             "language": ["C#", "ShaderLab"],
             "programs": ["Blender"],
             "team_size": 1,
-            "role": "Solo Developer",
+            "role": ["Solo Developer"],
             "github": "https://github.com/kianniek/Cloud-Workers"
         },
         {
@@ -96,7 +96,7 @@
             "description": "This platformer is set in a sewer, where the objective is to reach the light at the end of the tunnel and replace a broken bulb. The game consists of five distinct levels, each presenting unique challenges: *Sinking Area*, where the environment is gradually submerged; *Flip Swap Level*, which involves alternating platforms; *Air Pipe Part*, focused on navigating air currents; *Rotating Puzzle*, a level filled with spinning mechanisms to solve; and *The Speedrun Rotation*, a fast-paced challenge testing the player's agility. Each level offers a different gameplay experience, requiring skill and strategy to complete.",
             "image": "images/projects/TheLight/TheLightAtTheEnd.jpg",
             "color": "#FF6633",
-            "role": "Lead Developer, Designer, Project Manager",
+            "role": ["Lead Developer", "Designer", "Project Manager"],
             "team_size": 4,
             "timeline": "Year 2 - Project Game Development",
             "engine": "Unity",
@@ -108,7 +108,7 @@
             "ID": "008",
             "title": "Chorís Ánchos",
             "description": "This VR application is designed as a relaxation and meditation tool for students and teachers at Xplore - Angora High School. It allows users to explore a variety of immersive worlds, each crafted to promote relaxation and stress relief. The environments are carefully designed to help users unwind, offering a calming experience ideal for taking a break from the demands of school life. The application aims to provide a therapeutic escape, enabling both students and teachers to de-stress and rejuvenate through the soothing, virtual landscapes.",
-            "role": "Developer, Designer",
+            "role": ["Developer", "Designer"],
             "team_size": 4,
             "image": "images/projects/Chorís Ánchos/MoodBoardConseptLogo.jpg",
             "color": "#FFFFFF",
@@ -131,14 +131,14 @@
             "language": ["C#", "HLSL", "Compute Shaders"],
             "programs": ["Blender"],
             "team_size": 1,
-            "role": "Solo Developer",
+            "role": ["Solo Developer"],
             "github": "https://github.com/kianniek/ProcedualWallsAndPaths"
         },
         {
             "ID": "010",
             "title": "Function Dungeon II",
             "description": "Function-Dungeon-II is an educational game created to help students aged 12 to 16 learn and practice linear functions in an engaging and interactive way. The game is designed to combine learning with entertainment, providing students with a hands-on approach to understanding mathematical concepts through gameplay. My team and I developed a prototype to explore this design space, focusing on making complex topics like linear functions more accessible and enjoyable for students. The goal of the project is to create a learning experience that enhances students' understanding while maintaining their interest and motivation.",
-            "role": "Lead Developer",
+            "role": ["Lead Developer"],
             "team_size": 8,
             "image": "images/projects/Function-Dungeon-II/Combined Images.png",
             "color": "#12455F",

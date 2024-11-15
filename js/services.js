@@ -17,10 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Conditionally create and add the big service image
         if (useImages) {
+          const bigImageOParent = document.createElement('div');
           const bigImage = document.createElement('img');
+          const bigText = document.createElement('p');
           bigImage.className = 'service-image-big';
+          bigText.className = 'service-bigImage-text';
           bigImage.src = service.bigImage;
-          card.appendChild(bigImage);
+          bigText.textContent = service.bigImageText;
+          card.appendChild(bigImageOParent);
+          bigImageOParent.appendChild(bigImage);
+          bigImageOParent.appendChild(bigText);
         }
 
         // Create the services text wrapper
@@ -62,10 +68,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Conditionally create and add the small service image
         if (useImages) {
+          const smallImageOParent = document.createElement('div');
           const smallImage = document.createElement('img');
+          const smallText = document.createElement('p');
+
           smallImage.className = 'service-image-small';
+          smallText.className = 'service-bigImage-text';
+
           smallImage.src = service.smallImage;
-          card.appendChild(smallImage);
+          smallText.textContent = service.smallImageText;
+
+          card.appendChild(smallImageOParent);
+          smallImageOParent.appendChild(smallImage);
+          smallImageOParent.appendChild(smallText);
         }
 
         // Append the card to the services wrapper
