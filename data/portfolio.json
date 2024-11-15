@@ -179,6 +179,21 @@
             "team_size": 1,
             "github": "https://github.com/kianniek/NodeMCU-via-Telegram"
         }
+        ,
+        {
+            "ID": "013",
+            "title": "DirectX 12 Engine (Under Development)",
+            "description": "As an independent project, I am developing a rendering engine using the DirectX 12 API, focusing on low-level graphics programming and GPU resource management. The project involved creating a complete rendering pipeline, implementing a shader system with HLSL, supporting textures and basic lighting, and optimizing performance. This hands-on experience provided a deep dive into <b>graphics APIs</b>, systems programming, and the architectural complexities of modern rendering engines, culminating in an extensible framework for advanced rendering features. This project highlights my skills in <b>C++</b>, <b>DirectX 12</b>, and <b>graphics programming</b>.",
+            "role": "Developer",
+            "image": "images/projects/DirectX12Engine/DebugTri.png",
+            "color": "#202227",
+            "timeline": "September 2024 - Present",
+            "engine": "",
+            "language": ["C++", "HLSL"],
+            "programs": [],
+            "team_size": 1,
+            "github": "https://github.com/kianniek/DirectX-12-Engine"
+        }
     ],
     "contact": {
         "text": "Feel free to reach out at kianniek@hotmail.com for any inquiries or collaborations."
