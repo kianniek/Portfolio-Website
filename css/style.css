@@ -6431,13 +6431,13 @@ a.text-dark:hover {
 }
 
 .hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: stretch;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: stretch;
+  gap: 1rem;
 }
 
 .hero-section-divider {
@@ -6948,7 +6948,7 @@ a.text-dark:hover {
   border-radius: .375rem
 }
 
-.service-bigImage-text{
+.service-bigImage-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11777,21 +11777,21 @@ a.text-dark:hover {
     justify-content: center;
   }
 
-  .p-introduction{
+  .p-introduction {
     width: fit-content;
   }
 
-  .jumbotron > .container > .container {
+  .jumbotron>.container>.container {
     justify-content: center;
     margin-left: 0;
     margin-right: 0;
   }
 
-  .jumbotron > .container > .container > .btn-primary {
+  .jumbotron>.container>.container>.btn-primary {
     width: 100%;
   }
 
-  .jumbotron >.container > .container > .btn-secondary {
+  .jumbotron>.container>.container>.btn-secondary {
     width: 100%;
   }
 
@@ -11874,7 +11874,7 @@ a.text-dark:hover {
     font-size: 1rem;
   }
 
-  .h1-introduction-textwrapper{
+  .h1-introduction-textwrapper {
     font-size: 100%;
   }
 }
@@ -11954,6 +11954,46 @@ a.text-dark:hover {
     padding: 80px 8px;
     height: fit-content;
   }
+
+  .footer {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .footer-container {
+    width: 80%;
+    gap: 40px;
+    height: fit-content;
+    padding-bottom: 3rem;
+  }
+
+  .footer-contact {
+    width: 100%;
+  }
+
+  .footer-text {
+    width: 100%;
+  }
+
+  .footer-paragraph{
+    text-wrap-mode: nowrap;
+  }
+
+  .footer-separation-line {
+    width: 100%;
+  }
+
+  .footer-item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .footer-text-wrapper {
+    align-self: stretch;
+    align-items: center;}
 }
 
 /* Tablet and desktop views */
