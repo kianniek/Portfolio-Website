@@ -1,0 +1,171 @@
+/* General Page Styling */
+body {
+    padding-top: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #171717; /* From reference file */
+    color: #fefaee; /* Light text for dark background */
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    padding-left: 10%;
+    --ImageWidth: 80vw;
+    --headings: #fefaee;
+}
+
+p > img {
+    align-self: center;
+    max-width: var(--ImageWidth);
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+p {
+    display: flex;
+}
+
+.container {
+    max-width: 800px;
+    padding: 2rem;
+    background: #1f1f1f; /* Slightly lighter than background */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    color: var(--headings, #fefaee); /* Primary color */
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+/* Lists */
+ul, ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    border: 0;
+    border-top: 0.1rem solid #e6e6e6;
+    margin: 1rem 0;
+}
+
+/* Code Blocks */
+pre, code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #212529;
+    color: #e83e8c; /* Pink for code text */
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+}
+
+pre {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    white-space: pre-wrap;
+}
+
+/* Links */
+a {
+    color: var(--cyan, #17a2b8); /* Cyan color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--light, #fefaee);
+    text-decoration: underline;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #343a40;
+    color: #fefaee;
+}
+
+td {
+    background-color: #1f1f1f;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid #fefaee;
+    background: #2c2c2c;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p > img {
+        align-self: center;
+        padding-left: 50%;
+        transform: translate(-25%);
+        max-width: var(--ImageWidth);
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+}
