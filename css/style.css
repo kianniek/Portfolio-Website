@@ -6508,7 +6508,8 @@ a.text-dark:hover {
   align-items: center;
   gap: 1rem;
   min-height: fit-content;
-  height: 100vh; /* Adjusted to fit a whole page */
+  height: 99vh; /* Adjusted to fit a whole page */
+  max-height: 100vh;
 }
 
 /* General styles for the About section */
