@@ -6508,7 +6508,7 @@ a.text-dark:hover {
   align-items: center;
   gap: 1rem;
   min-height: fit-content;
-  max-height: 100vh;
+  height: 100vh;
 }
 
 /* General styles for the About section */
@@ -6518,6 +6518,7 @@ a.text-dark:hover {
   justify-content: center;
   padding: 20px;
   text-align: left;
+  min-height: fit-content;
   height: 100%;
 }
 
@@ -7044,7 +7045,7 @@ a.text-dark:hover {
 
 .items {
   display: flex;
-  padding: 0 20vw;
+  padding: 0 5vw;
   align-items: flex-start;
   align-content: flex-start;
   gap: 3rem;
@@ -7180,12 +7181,11 @@ a.text-dark:hover {
 
 .contact-section-divider {
   position: relative;
-  transform: translateY(-77px);
   flex: 1 0 0;
   align-self: stretch;
   height: 11rem;
   width: 100%;
-  background: var(--Gradient-2, linear-gradient(179deg, #fffaef00 24.53%, #fcd68b 37.59%, #f9784c 50.72%, #9c356d 62.85%, #171717 76.83%))
+  background: var(--Gradient-2, linear-gradient(180deg, #fcfaef 24.53%, #fcd68b 37.59%, #f9784c 50.72%, #9c356d 62.85%, #171717 76.83%));
 }
 
 .footer {
@@ -11946,7 +11946,7 @@ a.text-dark:hover {
   #offer,
   #services,
   #testimonial,
-  .section-divider {
+  .section-divider, .hide-on-mobile {
     display: none;
   }
 
