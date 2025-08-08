@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Chicken Code Showcase</title>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="markdown-style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Placeholder for the converted content -->
+    <div id="markdown-output"></div>
+
+    <script>
+        // Function to fetch and convert the Markdown file
+        async function loadMarkdownFile() {
+            try {
+                // Fetch the Markdown file
+                const response = await fetch('README.md'); // Replace with your .md file name
+                if (!response.ok) {
+                    throw new Error(`Could not fetch the Markdown file: ${response.statusText}`);
+                }
+
+                // Get the Markdown content as text
+                const markdownText = await response.text();
+
+                // Initialize the Showdown converter
+                const converter = new showdown.Converter();
+
+                // Convert Markdown to HTML
+                const html = converter.makeHtml(markdownText);
+
+                // Display the converted HTML in the output div
+                document.getElementById('markdown-output').innerHTML = html;
+            } catch (error) {
+                console.error('Error loading Markdown file:', error);
+                document.getElementById('markdown-output').innerText =
+                    'An error occurred while loading the Markdown file.';
+            }
+        }
+
+        // Call the function on page load
+        document.addEventListener('DOMContentLoaded', loadMarkdownFile);
+    </script>
+</body>
+</html>

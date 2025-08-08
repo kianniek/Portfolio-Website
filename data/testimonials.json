@@ -1,0 +1,18 @@
+[
+    {
+        "name": "anastasiapiano",
+		"logoImg": "images/ClientPfp/anastasiapiano_pfp.jpg",
+        "country": "Greece",
+        "testimonial": "Kian was a high-level professional, with a personal style (that's why I chose him from all available sellers). He met all my needs and requirements and responded on time. He was patient with all my notes, kept asking until he understood what I was asking for or requesting, integrated his own ideas which helped me and gave me a clearer view of what I wanted and needed, took initiative, and delivered by bringing fresh ideas. He paid close attention to details and never complained. He was always trying to figure out the product I was imagining in my head and how he could design and produce it. I highly recommend him!",
+        "source": "Fiverr",
+        "date": "26 Aug 2021"
+    },
+    {
+        "name": "garrieramos",
+        "country": "United Kingdom",
+		"logoImg": "images/ClientPfp/garrieramos_pfp.jpg",
+        "testimonial": "Amazing. Met all my needs and did it so fast as well. 100% Recommend",
+        "source": "Fiverr",
+        "date": "20 Aug 2020"
+    }
+]

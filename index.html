@@ -11,444 +11,337 @@
 
     gtag('config', 'G-0R7YSQ9RKN');
   </script>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Explore the portfolio webpage of Kian Hamidi, an Amsterdam-based game developer who creates unique and innovative game designs. With a passion for pushing the boundaries in the gaming industry, Kian's work demonstrates his creativity and talent. Take a look at his portfolio to discover some of the exciting games he has developed.">
-  <meta name="keywords" content="Game Development, Game Design, C#, Coding, Design">
-  <meta name="author" content="Kian Hamidi">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kian Hamidi's Portfolio</title>
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Kanit:wght@800&display=swap"
-    rel="stylesheet" />
-  <!-- Bootstrap Icon-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
-  <!-- Animate CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-  <!-- SplideJs Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.1/dist/css/splide.min.css" />
-  <!-- App Styles -->
-  <link rel="stylesheet" href="styles/app.css" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kian Hamidi Portfolio</title>
+  <!-- Bootstrap -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Kian Hamidi" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header">
-    <div class="animate__animated animate__slideInDown">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky"> <a class="navbar-brand"
+      href="index.html">KIAN HAMIDI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+        class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"> <a class="nav-link" href="#about">ABOUT ME&nbsp; <span
+              class="sr-only">(current)</span></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="portfolio.html">PORTFOLIO</a> </li>
+        <li class="nav-item hide-on-mobile"> <a class="nav-link" href="#services">SERVICES</a> </li>
+        <li class="nav-item hide-on-mobile"> <a class="nav-link" href="#offer">SKILLS</a> </li>
+        <li class="nav-item hide-on-mobile"> <a class="nav-link" href="#testimonial">TESTIMONIALS</a> </li>
+      </ul>
+    </div>
+    <a class="collapse navbar-collapse btn btn-navigation" href="#contact" role="button">GET IN TOUCH</a>
+  </nav>
+  <section id="home" class="hero-section">
+    <div class="jumbotron text-left">
       <div class="container">
-        <h1 class="header__logo">
-          <a href="#hero"> Kian </a>
-        </h1>
-        <nav class="navigation">
-          <ul>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <a class="btn btn--main" href="assets\CV\CV Kian Niek Hamidi Abd Abad.pdf" download>
-            <i class="bi bi-download"></i> Curriculum Vitae
-          </a>
-        </nav>
-        <div class="header__resume">
-          <a class="btn btn--main" href="assets\CV\CV Kian Niek Hamidi Abd Abad.pdf" download>
-            <i class="bi bi-download"></i> Curriculum Vitae
-          </a>
+        <div class="row">
+          <div class="col-12">
+            <p class="p-introduction">👋 Hey, I am Kian</p>
+            <div class="h1-introduction-textwrapper">
+              <h1 class="h1-introduction">GAME</h1>
+              <h1 class="h1-introduction">DEVELOPER</h1>
+            </div>
+            <h2 class="h1-introduction-2">Based In Amsterdam</h2>
+          </div>
         </div>
-        <div class="header__mobile">
-          <button id="navigation-button">
-            <i class="bi bi-list"></i>
-          </button>
+        <div class="container collum">
+          <a class="btn btn-primary" href="#portfolio" role="button">MY WORKS</a>
+          <a class="btn btn-secondary" href="#contact" role="button">LETS TALK</a>
         </div>
       </div>
     </div>
-  </header>
+    <script>
+      // Function to initialize and store the initial font size if not already set
+      function initializeFontSize(element) {
+        if (!element.hasAttribute('data-initial-font-size')) {
+          const initialFontSize = parseFloat(window.getComputedStyle(element).fontSize);
+          element.setAttribute('data-initial-font-size', initialFontSize); // Store initial font size
+        }
+      }
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero__wrapper">
-        <h2 class="hero__title animate__animated animate__slideInDown">
-          <abbr title="Kian Niek Hamidi Abd Abad">Kian Hamidi</abbr><br>
-        </h2>
-        <p class="hero__subtext animate__animated animate__slideInDown">
-          Game Developer
-        </p>
-        <p class="hero__content animate__animated animate__slideInDown">
-        I am a Game Developer based in Amsterdam</p>
+      // Function to adjust font size for a single element without exceeding initial font size
+      function adjustFontSize(element) {
+        const parent = element.parentElement;
+        const initialFontSize = parseFloat(element.getAttribute('data-initial-font-size'));
+        let fontSize = initialFontSize; // Reset to the initial font size on each resize
+        console.log(element.offsetWidth + " | " + parent.offsetWidth);
+        element.style.fontSize = `${fontSize}px`;
 
-        <div class="hero__img">
-          <div class="hero__imgCircle animate__animated animate__slideInUp">
-            <img class="scale-1-4x border" src="assets/CV/pfp_Kian.png" alt="Profile Picture" />
-          </div>
-        </div>
+        // Reduce font size until it fits within the parent's width, but don't go below initial size
+        while (element.offsetWidth > parent.offsetWidth && fontSize > 1) {
+          fontSize -= 1;
+          element.style.fontSize = `${fontSize}px`;
+        }
+      }
 
-        <div class="hero__social animate__animated animate__slideInUp">
-          <ul class="social">
-            <li>
-              <a href="https://www.linkedin.com/in/kian-niek-hamidi-30042004kn"><i class="bi bi-linkedin"></i></a>
-            </li>
-            <li>
-              <a href="https://github.com/kianniek"><i class="bi bi-github"></i></a>
-            </li>
-            <li>
-              <a href="https://twitter.com/Kianniek1"><i class="bi bi-twitter"></i></a>
-            </li>
-            <li>
-              <a href="https://www.twitch.tv/kianniek"><i class="bi bi-twitch"></i></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/kianniek"><i class="bi bi-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
+      // Function to adjust font size for all elements with the provided selector
+      function adjustFontSizeForAll(selector) {
+        const elements = document.querySelectorAll(selector);
+
+        elements.forEach(element => {
+          initializeFontSize(element); // Set initial font size once
+          adjustFontSize(element); // Adjust font size if needed
+        });
+      }
+
+      // Initial call for adjusting font size on DOM load
+      window.addEventListener('DOMContentLoaded', () => {
+        adjustFontSizeForAll('.h1-introduction');
+        adjustFontSizeForAll('.h1-introduction-2');
+        adjustFontSizeForAll('.p-introduction');
+      });
+
+      // Adjust font sizes again on window resize
+      window.addEventListener('resize', () => {
+        adjustFontSizeForAll('.h1-introduction');
+        adjustFontSizeForAll('.h1-introduction-2');
+        adjustFontSizeForAll('.p-introduction');
+      });
+    </script>
+    <div class="carousel-container">
+      <div class="carousel"> <img src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg"
+          alt="Logo 2"> <img src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
+          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2">
+      </div>
+    </div>
+    <div class="hero-section-divider">
+      <div class="section-divider-line"></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <div class="aboutImage">
+        <div class="imageBackground"></div>
+        <img src="images/KianHamidi.jpg" alt="Image of Kian Hamidi">
+      </div>
+      <div class="about-textblock">
+        <p class="tagline">About</p>
+        <p class="h2">Crafting Interactive EXPERIENCES</p>
+        <p class="p">With an upcoming bachelor in <b>Game Development</b>, my focus on <b>Technical Art</b>, <b>Game
+            Design</b> and <b>Developing for Emerging Technologies</b> I am all about creation and challenging myself to
+          push the limits of myself and technologies.</p>
+        <p><a class="btn btn-secondary" href="#contact" role="button">Get in contact</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section class="section animate__animated animate__slideInUp" id="portfolio">
-    <div class="container">
-      <div class="section__header section__header--center">
-        <h2 class="section__title">Projects</h2>
-        <p class="section__subtitle">See my latest work</p>
+  <section id="portfolio">
+    <div class="portfolio">
+      <div class="headline-wrapper">
+        <p class="tagline">portfolio</p>
+        <p class="headline-2">My latest work</p>
       </div>
-      <div class="portfolio">
-        <!--Project: Chorís Ánchos-->
-        <div class="portfolio__box">
-          <div class="portfolio__img choris-Anchos">
-            <img src="assets/Projects/Chorís Ánchos/MoodBoardConseptLogo.jpg" alt="Portfolio Items" />
-            <div class="narrow_cta">
-              <a href="#portfolio" target="_blank"
-                class="button__itch choris-Anchos">In Development&nbsp;
-              </a>
+      <div class="project-card">
+        <div class="image-group">
+          <img id="project-image" src="images/400x400.gif" alt="Project Image">
+        </div>
+        <div class="textWrapper-projectCard">
+          <div class="arrows-projectCard">
+            <!-- Add unique IDs for both arrow images -->
+            <img id="prev-arrow" src="images/Arrow Left.svg" alt="Previous Project" class="clickable-arrow">
+            <img id="next-arrow" src="images/Arrow Right.svg" alt="Next Project" class="clickable-arrow">
+          </div>
+          <div class="headerText-projectCard">
+            <div class="tagline-textWrapper">
+              <p id="project-tagline" class="projectTagline-textWrapper">Game Design</p>
             </div>
+            <p id="project-title" class="textWrapper-titleOfProject">TitleOfProject</p>
           </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Chorís Ánchos</h3>
-            <p class="portfolio__content">
-              As soon as the students and teachers put on the VR headset, they find themselves immersed in a virtual space filled with different items. These items allow the players to explore different worlds that can help them relax and unwind.
-            </p>
-            <p class="portfolio__contentSideNote">
-              This project was made in a team<br>
-Role: Coder - Designer - Gameplay Engineer<br>
-Engine used: Unity 3D
-				<span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-unity" viewBox="0 0 16 16">
-                  <path
-                    d="M15 11.2V3.733L8.61 0v2.867l2.503 1.466c.099.067.099.2 0 .234L8.148 6.3c-.099.067-.197.033-.263 0L4.92 4.567c-.099-.034-.099-.2 0-.234l2.504-1.466V0L1 3.733V11.2v-.033.033l2.438-1.433V6.833c0-.1.131-.166.197-.133L6.6 8.433c.099.067.132.134.132.234v3.466c0 .1-.132.167-.198.134L4.031 10.8l-2.438 1.433L7.983 16l6.391-3.733-2.438-1.434L9.434 12.3c-.099.067-.198 0-.198-.133V8.7c0-.1.066-.2.132-.233l2.965-1.734c.099-.066.197 0 .197.134V9.8L15 11.2Z" />
-                </svg> + FMOD</span>
-			<br>
-			Programs Used: Adobe Photoschop, Adobe Substance Painter, Blender, FMOD Studio<br>
-			Made for: Meta Oculus Quest 2 <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-meta" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8.217 5.243C9.145 3.988 10.171 3 11.483 3 13.96 3 16 6.153 16.001 9.907c0 2.29-.986 3.725-2.757 3.725-1.543 0-2.395-.866-3.924-3.424l-.667-1.123-.118-.197a54.944 54.944 0 0 0-.53-.877l-1.178 2.08c-1.673 2.925-2.615 3.541-3.923 3.541C1.086 13.632 0 12.217 0 9.973 0 6.388 1.995 3 4.598 3c.319 0 .625.039.924.122.31.086.611.22.913.407.577.359 1.154.915 1.782 1.714Zm1.516 2.224c-.252-.41-.494-.787-.727-1.133L9 6.326c.845-1.305 1.543-1.954 2.372-1.954 1.723 0 3.102 2.537 3.102 5.653 0 1.188-.39 1.877-1.195 1.877-.773 0-1.142-.51-2.61-2.87l-.937-1.565ZM4.846 4.756c.725.1 1.385.634 2.34 2.001A212.13 212.13 0 0 0 5.551 9.3c-1.357 2.126-1.826 2.603-2.581 2.603-.777 0-1.24-.682-1.24-1.9 0-2.602 1.298-5.264 2.846-5.264.091 0 .181.006.27.018Z"/>
-</svg></span>
-            </p>
-            <!--<a class="portfolio__link" href="https://kianniek.itch.io/cloud-workers">See Work <i
-                class="bi bi-arrow-right"></i></a>-->
-          </div>
-        </div>
-        <!--Project: The Light-->
-        <div class="portfolio__box">
-          <div class="portfolio__img the-light">
-            <img src="assets\Projects\TheLight\portfolio-01.jpg" alt="Portfolio Items" />
-            <div class="narrow_cta">
-              <a href="https://clockworks-studio.itch.io/the-light-at-the-end-of-the-tunnel" target="_blank"
-                class="button__itch the-light">Download on itch.io
-              </a>
-            </div>
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">The Light <span class="portfolio__title_less_important">(At The End of The
-                Tunnel)</span></h3>
-            <p class="portfolio__content">
-              This platformer takes place in a sewer. There's a light at the end of the tunnel and you have to replace
-              the bulb. The game consist of 5 levels: Sinking Area, Flip Swap Level, Air Pipe Part, Rotating Puzzle and
-              The Speedrun Rotation.
-            </p>
-            <p class="portfolio__contentSideNote">
-              This project was made in a team <br>
-              Role: Coder - Designer - Gameplay Engineer <br>
-              Engine used: Unity 3D
-              <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-unity" viewBox="0 0 16 16">
-                  <path
-                    d="M15 11.2V3.733L8.61 0v2.867l2.503 1.466c.099.067.099.2 0 .234L8.148 6.3c-.099.067-.197.033-.263 0L4.92 4.567c-.099-.034-.099-.2 0-.234l2.504-1.466V0L1 3.733V11.2v-.033.033l2.438-1.433V6.833c0-.1.131-.166.197-.133L6.6 8.433c.099.067.132.134.132.234v3.466c0 .1-.132.167-.198.134L4.031 10.8l-2.438 1.433L7.983 16l6.391-3.733-2.438-1.434L9.434 12.3c-.099.067-.198 0-.198-.133V8.7c0-.1.066-.2.132-.233l2.965-1.734c.099-.066.197 0 .197.134V9.8L15 11.2Z" />
-                </svg></span>
-            </p>
-            <a class="portfolio__link" href="https://clockworks-studio.itch.io/the-light-at-the-end-of-the-tunnel">See
-              Work <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-	<!--Project: Cloud Workers-->
-        <div class="portfolio__box">
-          <div class="portfolio__img cloud-workers">
-            <img src="assets/Projects/CloudWorkers/CloudWorkersLogoTransparent.png" alt="Portfolio Items" />
-            <div class="narrow_cta">
-              <a href="https://kianniek.itch.io/cloud-workers" target="_blank"
-                class="button__itch cloud-workers">Download on itch.io
-              </a>
-            </div>
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Cloud Workers</h3>
-            <p class="portfolio__content">
-              You are a ship that uses clouds as fuel to stay in the air. Enemy pirate ships try to take you down, shoot
-              them to destroy these pirates. but watch out! shooting rockets uses your fuel. So balance collecting fuel
-              and defending yourself to get the best score!
-            </p>
-            <p class="portfolio__contentSideNote">
-              Solo made project
-            </p>
-            <a class="portfolio__link" href="CloudWorkers.html">See Work <i
-                class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!--
-        <div class="portfolio__box">
-          <div class="portfolio__img">
-            <img src="assets/portfolio-04.jpg" alt="Portfolio Items" />
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Accern Service</h3>
-            <p class="portfolio__content">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dignissimos
-              pariatur dolor vitae assumenda, porro quaerat corporis quos placeat a alias
-              molestiae, totam, dolore cum perspiciatis. Voluptate dolorem doloremque nobis.
-            </p>
-            <a class="portfolio__link" href="#">See Work <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      -->
-        <!--
-        <div class="portfolio__box">
-          <div class="portfolio__img">
-            <img src="assets/portfolio-03.jpg" alt="Portfolio Items" />
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Three dots</h3>
-            <p class="portfolio__content">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dignissimos
-              pariatur dolor vitae assumenda, porro quaerat corporis quos placeat a alias
-              molestiae, totam, dolore cum perspiciatis. Voluptate dolorem doloremque nobis.
-            </p>
-            <a class="portfolio__link" href="#">See Work <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    -->
-        <!-- <div class="section__footer">
-          <a href="#contact">
-            Ask for More Projects
-            <i class="bi bi-arrow-right"></i>
-          </a>-->
-        </div> 
-      </div>
-  </section>
-  <!-- About Me Section -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="about">
-        <div class="about__left">
-          <div class="section__header">
-            <h2 class="section__title">About</h2>
-            <p class="section__subtitle">Few things about me</p>
-          </div>
-          <p class="about__bio">
-          <ul class="">
-            <li><b id="age">Age:</b> </li>
-            <li><b>Gender: </b>Male</li>
-            <li><b>Pronouns: </b><abbr title="He/Him/They/Them (I do not mind actually)">He/Him</abbr></li>
-          </ul>
-
-          <br>
-          I am a 2nd year <b><abbr title="HBO-ICT">Game Development</abbr></b> student at <abbr
-            title="Also known as 'Amsterdam University of Applied Sciences' a.k.a AUAS"><a href="https://www.hva.nl/"
-              target="_blank" rel="noopener noreferrer"><b>HvA</b></a> (Hogeschool van Amsterdam)</abbr><br>
-          My intressest are anything tech and science related. I am very eager to learn, I am curious and am constantly learning. <b>Art</b> and <b>Design</b> are also things I enjoy very
-          much.
-          <br>
-          I have been coding games and other software since I was 10 years old. <br>
-          For my school research project I made an
-          robotarm that was able to be controlled using an app on your phone that connected to the robot using
-          bluetooth. You can watch the (only available in dutch and in poor quality) video <a
-            href="https://youtu.be/-Lb02yRAaJ0">here</a>
-          <br>
-          <br>
+          <p id="project-description" class="textWrapper-discription">
+            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
           </p>
-          <h4 class="about__skillsTitle">Skills</h4>
-          <ul class="about__skillsList">
-            <li>C#</li>
-            <li>Unity</li>
-            <li>Blender</li>
-            <li>Java</li>
-            <li>Figma</li>
-            <li>XR/VR/AR</li>
-            <li>Agile</li>
-            <li>3D Modeling</li>
-            <li>Animation</li>
-          </ul>
-        </div>
-        <div class="about__right">
-          <img src="assets/avatar.png" alt="Profile Picture" v />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <!-- <section class="container">
-    <div class="section" id="testimonials">
-      <div class="section__header section__header--center">
-        <h2 class="section__title">People Says</h2>
-        <p class="section__subtitle">What others think about me</p>
+  <section id="testimonial">
+    <div class="testimonial">
+      <div class="testimonial-headline_wrapper">
+        <p class="testimonial-tagline">TESTIMONIALS</p>
+        <p class="testimonial-header">WHAT PEOPLE SAY</p>
       </div>
-      <div class="testimonials">
-        <div class="splide">
-          <div class="splide__track">
-            <div class="splide__list">
-              <div class="testimonials__box splide__slide">
-                <div class="testimonials__content">
-                  <span class="testimonials__sign">
-                    <i class="bi bi-chat-square-quote"></i>
-                  </span>
-                  <p class="testimonials__quotes">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, maxime
-                    corporis deleniti distinctio ullam, accusamus debitis ratione unde rerum illo
-                    sit laudantium molestiae ipsum praesentium neque sed perferendis! Blanditiis,
-                    debitis.
-                  </p>
-                  <div class="testimonials__author">
-                    <div class="testimonials__authorInfo">
-                      <h4>Dennis Ivy</h4>
-                      <p>Instructor & Youtuber</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonials__box splide__slide">
-                <div class="testimonials__content">
-                  <span class="testimonials__sign">
-                    <i class="bi bi-chat-square-quote"></i>
-                  </span>
-                  <p class="testimonials__quotes">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, maxime
-                    corporis deleniti distinctio ullam, accusamus debitis ratione unde rerum illo
-                    sit laudantium molestiae ipsum praesentium neque sed perferendis! Blanditiis,
-                    debitis.
-                  </p>
-                  <div class="testimonials__author">
-                    <div class="testimonials__authorInfo">
-                      <h4>Shahriar Parvez</h4>
-                      <p>Web Developer & UI Designer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonials__box splide__slide">
-                <div class="testimonials__content">
-                  <span class="testimonials__sign">
-                    <i class="bi bi-chat-square-quote"></i>
-                  </span>
-                  <p class="testimonials__quotes">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, maxime
-                    corporis deleniti distinctio ullam, accusamus debitis ratione unde rerum illo
-                    sit laudantium molestiae ipsum praesentium neque sed perferendis! Blanditiis,
-                    debitis.
-                  </p>
-                  <div class="testimonials__author">
-                    <div class="testimonials__authorInfo">
-                      <h4>Praveen M.</h4>
-                      <p>Python, Django Developer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- Contact Section -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact">
-        <div class="contact__left">
-          <div class="section__header">
-            <h2 class="section__title">Contact Me</h2>
-            <p class="section__subtitle">Reach out to me, 24/7</p>
-          </div>
-          <div class="contact__info">
-            <p>Email Me:</p>
-            <a href="mailto:kianniek@hotmail.com">kianniek@hotmail.com</a>
-          </div>
-
-          <div class="contact__info">
-            <p>Follow Me:</p>
-            <ul class="social">
-              <li>
-                <a href="https://www.linkedin.com/in/kian-niek-hamidi-30042004kn"><i class="bi bi-linkedin"></i></a>
-              </li>
-              <li>
-                <a href="https://github.com/kianniek"><i class="bi bi-github"></i></a>
-              </li>
-              <li>
-                <a href="https://twitter.com/Kianniek1"><i class="bi bi-twitter"></i></a>
-              </li>
-              <li>
-                <a href="https://www.twitch.tv/kianniek"><i class="bi bi-twitch"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- <div class="contact__right">
-          <form class="contact__form" action="scripts/form.php" method="post">
-            <div class="contact__fields">
-              <label for="name">Name</label>
-              <input type="name" name="name" id="name" placeholder="Your Name" />
-            </div>
-            <div class="contact__fields">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Return Email Address" />
-            </div>
-            <div class="contact__fields">
-              <label for="message">Message</label>
-              <textarea name="message" id="message" placeholder="Write Message..."></textarea>
-            </div>
-            <div class="contact__fields">
-              <button class="btn btn--main" type="submit" name="submit" value="Submit">
-                Send Message <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
-          </form>
-        </div> -->
+      <div class="testimonial-wrapper">
+        <script src="js/testimonials.js"></script>
       </div>
     </div>
   </section>
+  <div class="section-divider"></div>
 
-  <footer class="footer">
-    <div class="footer__copyright">
-      <p><a href="#" class="no-hyperlink">&hearts;   Thanks for taking a look at my website. Please Also take a look at my </a><a href="portfolio.html" >portfolio</a>   &hearts;</a></p>
-      <small>
-        <p id="copyright"></p>
-      </small>
+  <section id="services">
+    <div class="services">
+      <div class="services-headline-wrapper">
+        <p class="services-tagline">SERVICES</p>
+        <p class="services-header">HOW CAN I HELP</p>
+      </div>
+      <div class="services-wrapper">
+        <script src="js/services.js"></script>
+      </div>
+  </section>
+
+  <section id="offer">
+    <div class="offer">
+      <div class="items">
+        <div class="text-wrapper">
+          <div class="quote-inline"></div>
+          <div class="offer-headline-wrapper">
+            <p class="offer-tagline">My offer</p>
+            <p class="offer-headline">ART OF DIGITAL CREATION</p>
+          </div>
+          <div class="offer-button">
+            <p class="offer-button-text">contact me</p>
+          </div>
+          <div class="quote-inline"></div>
+        </div>
+        <script src="js/offers.js"></script>
+      </div>
+    </div>
+    </div>
+  </section>
+  
+  <footer id="contact" class="contact">
+    <div class="contact-section-divider"></div>
+    <div class="footer">
+      <div class="footer-container">
+        <div class="footer-contact">
+          <div class="footer-text">
+            <div class="footer-text-wrapper">
+              <div class="footer-headline">Contact</div>
+              <div class="footer-paragraph">Let's get in contact!</div>
+            </div>
+            <div class="footer-separation-line"></div>
+            <div class="footer-item-wrapper">
+              <div class="footer-item">
+                <div class="footer-subtitle">Location</div>
+                <div class="footer-paragraph-light">Amsterdam, <br />The Netherlands</div>
+              </div>
+              <div class="footer-item">
+                <div class="footer-subtitle">Phone:</div>
+                <a class="footer-paragraph-light" href="tel:+31612812983">+31 6128 129 83</a>
+              </div>
+              <div class="footer-item">
+                <div class="footer-subtitle">Mail:</div>
+                <a class="footer-paragraph-light"
+                  href="mailto:kianniek@hotmail.com?body=Send%20From%20Website%20Mail%20Link">kianniek@hotmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-input-form-wrapper">
+          <div class="footer-input-wrapper-horizontal">
+            <div class="footer-input-wrapper">
+              <div class="footer-bold-text">First Name</div>
+              <div class="footer-input-field">
+                <div class="footer-small-text">Your First Name</div>
+              </div>
+            </div>
+            <div class="footer-input-wrapper">
+              <div class="footer-bold-text">Last Name</div>
+              <div class="footer-input-field">
+                <div class="footer-small-text">Your Last Name</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bold-text">Email Address</div>
+            <div class="footer-input-field">
+              <div class="footer-small-text">Email Address</div>
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bold-text">Select Service</div>
+            <div class="footer-items">
+              <div class="footer-item-group">
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">Graphic Design</div>
+                </div>
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">Game Development</div>
+                </div>
+              </div>
+              <div class="footer-item-group">
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">3D Modeling & Animation</div>
+                </div>
+                <div class="footer-item">
+                  <div class="footer-ellipse"></div>
+                  <div class="footer-small-text">Website Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bold-text">Message</div>
+            <div class="footer-input-field message">
+              <div class="footer-small-text">Write your message here</div>
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-button">
+              <div class="footer-button-text">Submit</div>
+            </div>
+            <div class="footer-terms">
+              By submitting this form you read and agree to the Terms & Conditions and our privacy policy.
+            </div>
+          </div>
+          <div class="footer-input-wrapper">
+            <div class="footer-bottom-bar">
+              <div class="footer-logo">Kian Hamidi</div>
+              <div class="footer-copyright">{Copyright}</div>
+              <div class="footer-link-wrapper">
+                <div class="footer-link">Privacy Policy</div>
+                <div class="footer-link">Cookie Policy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </footer>
-
-  <!-- SplideJs v3 -->
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.1/dist/js/splide.min.js"></script>
-  <!-- Scroll Reveal -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <!-- App Scripts -->
-  <script src="scripts/app.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script src="js/style-js.js"></script>
+  <!-- <script src="js/restoreScroll.js"></script> -->
+  <script src="js/portfolioSectionCaroucel"></script>
+    
 </body>
 
 </html>

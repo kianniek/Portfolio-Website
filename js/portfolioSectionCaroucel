@@ -1,0 +1,135 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Fetch the JSON data
+    fetch('data/portfolio.json') // Adjust the path to where your JSON file is located
+        .then(response => response.json()) // Parse the JSON data
+        .then(data => {
+            let projects = data.projects;
+            let currentIndex = 0;
+
+            // Sort options
+            const customOrder = ["012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
+            const hiddenProjects = ["012", "011"];
+
+            // Function to sort by custom array of IDs
+            const sortByCustomOrder = (a, b) => {
+                const indexA = customOrder.indexOf(a.ID);
+                const indexB = customOrder.indexOf(b.ID);
+                return indexA - indexB;
+            };
+
+            // Exclude hidden projects
+            projects = projects.filter(project => !hiddenProjects.includes(project.ID));
+
+            // Apply sorting: custom sorting is prioritized
+            if (customOrder.length > 0) {
+                projects.sort(sortByCustomOrder);
+            }
+
+            // Tagline mappings
+            const projectTaglines = {
+                "Game Design": { text: "Game Design", color: "#FF6633" },
+                "Development": { text: "Development", color: "#007bff" },
+                "Research": { text: "Research", color: "#6f42c1" },
+                "UI/UX Design": { text: "UI/UX Design", color: "#20c997" },
+                "Project Management": { text: "Project Management", color: "#dc3545" }
+            };
+
+            const termToTaglineMap = {
+                "Design": "Game Design",
+                "Designer": "Game Design",
+                "Developer": "Development",
+                "Lead Designer": "Game Design",
+                "Lead Developer": "Development",
+                "Solo Developer": "Development",
+                "Programming": "Development",
+                "Researcher": "Research",
+                "Studied": "Research",
+                "Artificial Intelligence": "Research",
+                "UI": "UI/UX Design",
+                "UX": "UI/UX Design",
+                "Interface": "UI/UX Design",
+                "User Experience": "UI/UX Design",
+                "Project Manager": "Project Management",
+                "Lead Developer": "Project Management",
+            };
+
+            // Function to set the project taglines dynamically based on the role/description
+            function setProjectTaglineBasedOnTerms(project) {
+                const headerTextContainer = document.querySelector('.headerText-projectCard');
+                const taglineGroup = document.createElement('div');
+                taglineGroup.className = 'tagline-group';
+
+                // Remove any existing tagline-textWrapper elements
+                headerTextContainer.querySelectorAll('.tagline-textWrapper').forEach(taglineWrapper => taglineWrapper.remove());
+                headerTextContainer.querySelectorAll('.tagline-group').forEach(taglineWrapper => taglineWrapper.remove());
+
+                let taglines = new Set();
+                for (let i = 0; i < project.role.length; i++) {
+                    taglines.add(termToTaglineMap[project.role[i]]);
+                }
+
+                console.log(taglines);
+
+                // Loop through the terms and create a new tagline-textWrapper for each tagline
+                taglines.forEach((roleTagline) => {
+                    if (!projectTaglines[roleTagline]) return;
+
+                    // Create a new <div> with class "tagline-textWrapper"
+                    const taglineWrapper = document.createElement('div');
+                    taglineWrapper.className = 'tagline-textWrapper';
+
+                    // Create a new <p> element with the class "project-tagline" for each tagline
+                    const p = document.createElement('p');
+                    p.className = 'projectTagline-textWrapper';
+                    p.innerText = projectTaglines[roleTagline].text;  // Access the 'text' from projectTaglines object
+                    taglineWrapper.style.background = projectTaglines[roleTagline].color;
+
+                    // Append the <p> element (project-tagline) to the new tagline-textWrapper
+                    taglineWrapper.appendChild(p);
+
+                    // Append the new tagline-textWrapper to the headerText-projectCard container
+                    taglineGroup.appendChild(taglineWrapper);
+                });
+
+
+                // append the tagline group to the headerText-projectCard container
+                headerTextContainer.appendChild(taglineGroup);
+            }
+
+            // Function to update the project displayed
+            function updateProject(index) {
+                const project = projects[index];
+                const projectImage = document.getElementById('project-image');
+                const projectTitle = document.getElementById('project-title');
+                const projectDescription = document.getElementById('project-description');
+
+                projectImage.src = project.image;
+                projectTitle.textContent = project.title;
+                projectDescription.innerHTML = `
+                  ${project.description.substring(0, 150)}...
+                  <a href="portfolio.html?id=${project.ID}&openContext=true" class="read-more-btn">Read More</a>
+              `;
+                projectImage.style.backgroundColor = project.color;
+
+                // Set the tagline for the project based on its role/description
+                setProjectTaglineBasedOnTerms(project);
+            }
+
+            // Event listeners for next and previous arrows
+            document.getElementById('next-arrow').addEventListener('click', function () {
+                currentIndex = (currentIndex + 1) % projects.length;
+                updateProject(currentIndex);
+            });
+
+            document.getElementById('prev-arrow').addEventListener('click', function () {
+                currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+                updateProject(currentIndex);
+            });
+
+            // Initial project update
+            updateProject(currentIndex);
+        })
+        .catch(error => {
+            console.error('Error fetching the JSON file:', error);
+        });
+});

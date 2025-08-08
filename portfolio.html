@@ -2,309 +2,96 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kian Hamidi's Portfolio</title>
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0R7YSQ9RKN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Kanit:wght@800&display=swap"
-    rel="stylesheet" />
-  <!-- Bootstrap Icon-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
-  <!-- Animate CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    gtag('config', 'G-0R7YSQ9RKN');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link href="css/stylePortfolio.css" rel="stylesheet">
 
-  <!-- SplideJs Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.1/dist/css/splide.min.css" />
-  <!-- App Styles -->
-  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kian Hamidi" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <header class="header">
-    <div class="animate__animated animate__slideInDown">
-      <div class="container">
-        <h1 class="header__logo__Back">
-          <a href="index.html"> &larr;</a>
-        </h1>
-        <nav class="navigation">
-          <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-            <li><a href="VR.html">VR Minor</a></li>
-          </ul>
-        </nav>
-        <div class="header__mobile">
-          <button id="navigation-button">
-            <i class="bi bi-list"></i>
-          </button>
-        </div>
-      </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky"> <a class="navbar-brand"
+      href="index.html">KIAN HAMIDI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+        class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"> <a class="nav-link" href="index.html#about">ABOUT ME&nbsp; <span
+              class="sr-only">(current)</span></a> </li>
+        <li class="nav-item active"> <a class="nav-link" href="portfolio.html">PORTFOLIO</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="index.html#services">SERVICES</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="index.html#offer">SKILLS</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="index.html#testimonial">TESTIMONIALS</a> </li>
+      </ul>
     </div>
-  </header>
+    <a class="collapse navbar-collapse btn btn-navigation" href="index.html#contact" role="button">GET IN TOUCH</a>
+  </nav>
 
-  <!-- Portfolio Single -->
-  <section class="portfolioSingle">
-    <div class="container">
-      <div class="portfolioSingle__img">
-        <img src="assets/PortfolioImages/KIAN_Web.png" alt="Portfolio Thumbnail" />
-        <p>Welcome to my portfolio. Here I show work I made in the past. This page will be updated every so often so come back if you want to see some of my latest works.</p>
-      </div>
-      <!-- Portfolio Section -->
-  <section class="section animate__animated animate__slideInUp" id="portfolio">
-    <div class="container">
-      <div class="section__header section__header--center">
-        <h2 class="section__title">Projects</h2>
-        <p class="section__subtitle">See my latest work</p>
-      </div>
-      <div class="portfolio">
-        <!--Project: Chorís Ánchos-->
-        <div class="portfolio__box">
-          <div class="portfolio__img choris-Anchos">
-            <img src="assets/Projects/Chorís Ánchos/MoodBoardConseptLogo.jpg" alt="Portfolio Items" />
-            <div class="narrow_cta">
-              <a href="#portfolio" target="_blank"
-                class="button__itch choris-Anchos">In Development&nbsp;
-              </a>
-            </div>
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Chorís Ánchos</h3>
-            <p class="portfolio__content">
-              As soon as the students and teachers put on the VR headset, they find themselves immersed in a virtual space filled with different items. These items allow the players to explore different worlds that can help them relax and unwind.
-            </p>
-            <p class="portfolio__contentSideNote">
-              This project was made in a team<br>
-Role: Coder - Designer - Gameplay Engineer<br>
-Engine used: Unity 3D
-				<span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-unity" viewBox="0 0 16 16">
-                  <path
-                    d="M15 11.2V3.733L8.61 0v2.867l2.503 1.466c.099.067.099.2 0 .234L8.148 6.3c-.099.067-.197.033-.263 0L4.92 4.567c-.099-.034-.099-.2 0-.234l2.504-1.466V0L1 3.733V11.2v-.033.033l2.438-1.433V6.833c0-.1.131-.166.197-.133L6.6 8.433c.099.067.132.134.132.234v3.466c0 .1-.132.167-.198.134L4.031 10.8l-2.438 1.433L7.983 16l6.391-3.733-2.438-1.434L9.434 12.3c-.099.067-.198 0-.198-.133V8.7c0-.1.066-.2.132-.233l2.965-1.734c.099-.066.197 0 .197.134V9.8L15 11.2Z" />
-                </svg> + FMOD</span>
-			<br>
-			Programs Used: Adobe Photoschop, Adobe Substance Painter, Blender, FMOD Studio<br>
-			Made for: Meta Oculus Quest 2 <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-meta" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8.217 5.243C9.145 3.988 10.171 3 11.483 3 13.96 3 16 6.153 16.001 9.907c0 2.29-.986 3.725-2.757 3.725-1.543 0-2.395-.866-3.924-3.424l-.667-1.123-.118-.197a54.944 54.944 0 0 0-.53-.877l-1.178 2.08c-1.673 2.925-2.615 3.541-3.923 3.541C1.086 13.632 0 12.217 0 9.973 0 6.388 1.995 3 4.598 3c.319 0 .625.039.924.122.31.086.611.22.913.407.577.359 1.154.915 1.782 1.714Zm1.516 2.224c-.252-.41-.494-.787-.727-1.133L9 6.326c.845-1.305 1.543-1.954 2.372-1.954 1.723 0 3.102 2.537 3.102 5.653 0 1.188-.39 1.877-1.195 1.877-.773 0-1.142-.51-2.61-2.87l-.937-1.565ZM4.846 4.756c.725.1 1.385.634 2.34 2.001A212.13 212.13 0 0 0 5.551 9.3c-1.357 2.126-1.826 2.603-2.581 2.603-.777 0-1.24-.682-1.24-1.9 0-2.602 1.298-5.264 2.846-5.264.091 0 .181.006.27.018Z"/>
-</svg></span>
-            </p>
-            <!--<a class="portfolio__link" href="https://kianniek.itch.io/cloud-workers">See Work <i
-                class="bi bi-arrow-right"></i></a>-->
-          </div>
-        </div>
-        <!--Project: The Light-->
-        <div class="portfolio__box">
-          <div class="portfolio__img the-light">
-            <img src="assets\Projects\TheLight\portfolio-01.jpg" alt="Portfolio Items" />
-            <div class="narrow_cta">
-              <a href="https://clockworks-studio.itch.io/the-light-at-the-end-of-the-tunnel" target="_blank"
-                class="button__itch the-light">Download on itch.io
-              </a>
-            </div>
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">The Light <span class="portfolio__title_less_important">(At The End of The
-                Tunnel)</span></h3>
-            <p class="portfolio__content">
-              This platformer takes place in a sewer. There's a light at the end of the tunnel and you have to replace
-              the bulb. The game consist of 5 levels: Sinking Area, Flip Swap Level, Air Pipe Part, Rotating Puzzle and
-              The Speedrun Rotation.
-            </p>
-            <p class="portfolio__contentSideNote">
-              This project was made in a team <br>
-              Role: Coder - Designer - Gameplay Engineer <br>
-              Engine used: Unity 3D
-              <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-unity" viewBox="0 0 16 16">
-                  <path
-                    d="M15 11.2V3.733L8.61 0v2.867l2.503 1.466c.099.067.099.2 0 .234L8.148 6.3c-.099.067-.197.033-.263 0L4.92 4.567c-.099-.034-.099-.2 0-.234l2.504-1.466V0L1 3.733V11.2v-.033.033l2.438-1.433V6.833c0-.1.131-.166.197-.133L6.6 8.433c.099.067.132.134.132.234v3.466c0 .1-.132.167-.198.134L4.031 10.8l-2.438 1.433L7.983 16l6.391-3.733-2.438-1.434L9.434 12.3c-.099.067-.198 0-.198-.133V8.7c0-.1.066-.2.132-.233l2.965-1.734c.099-.066.197 0 .197.134V9.8L15 11.2Z" />
-                </svg></span>
-            </p>
-            <a class="portfolio__link" href="https://clockworks-studio.itch.io/the-light-at-the-end-of-the-tunnel">See
-              Work <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-	<!--Project: Cloud Workers-->
-        <div class="portfolio__box">
-          <div class="portfolio__img cloud-workers">
-            <img src="assets/Projects/CloudWorkers/CloudWorkersLogoTransparent.png" alt="Portfolio Items" />
-            <div class="narrow_cta">
-              <a href="https://kianniek.itch.io/cloud-workers" target="_blank"
-                class="button__itch cloud-workers">Download on itch.io
-              </a>
-            </div>
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Cloud Workers</h3>
-            <p class="portfolio__content">
-              You are a ship that uses clouds as fuel to stay in the air. Enemy pirate ships try to take you down, shoot
-              them to destroy these pirates. but watch out! shooting rockets uses your fuel. So balance collecting fuel
-              and defending yourself to get the best score!
-            </p>
-            <p class="portfolio__contentSideNote">
-              Solo made project
-            </p>
-            <a class="portfolio__link" href="https://kianniek.itch.io/cloud-workers">See Work <i
-                class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!--
-        <div class="portfolio__box">
-          <div class="portfolio__img">
-            <img src="assets/portfolio-04.jpg" alt="Portfolio Items" />
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Accern Service</h3>
-            <p class="portfolio__content">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dignissimos
-              pariatur dolor vitae assumenda, porro quaerat corporis quos placeat a alias
-              molestiae, totam, dolore cum perspiciatis. Voluptate dolorem doloremque nobis.
-            </p>
-            <a class="portfolio__link" href="#">See Work <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      -->
-        <!--
-        <div class="portfolio__box">
-          <div class="portfolio__img">
-            <img src="assets/portfolio-03.jpg" alt="Portfolio Items" />
-          </div>
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">Three dots</h3>
-            <p class="portfolio__content">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dignissimos
-              pariatur dolor vitae assumenda, porro quaerat corporis quos placeat a alias
-              molestiae, totam, dolore cum perspiciatis. Voluptate dolorem doloremque nobis.
-            </p>
-            <a class="portfolio__link" href="#">See Work <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    -->
-        <!-- <div class="section__footer">
-          <a href="#contact">
-            Ask for More Projects
-            <i class="bi bi-arrow-right"></i>
-          </a>-->
-        </div> 
-      </div>
-  </section>
-      <section class="section animate__animated animate__slideInUp" id="portfolio">
-        <div class="container">
-          <h3 class="portfolio__title">Freelance Work</h3>
-          <div class="gallery">
-            <figure class="gallery__item gallery__item__vid--1">
-              <video controls loop autoplay muted class="gallery__vid" alt="Trucker Hat Animation"
-                poster="assets\Projects\3DModels\FreelanceWork\hat.png">
-                <source src="assets/Projects/3DModels/FreelanceWork/HatRender_Web.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-            <figure class="gallery__item gallery__item__vid--2">
-              <video controls loop autoplay muted class="gallery__vid"
-                poster="assets\Projects\3DModels\FreelanceWork\ShirtAnimated.png" alt="Video 1">
-                <source src="assets/Projects/3DModels/FreelanceWork/ShirtPhysicsAnimLakers_Web.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-            <figure class="gallery__item gallery__item__vid--3">
-              <video controls loop autoplay muted class="gallery__vid"
-                poster="assets\Projects\3DModels\FreelanceWork\ShirtAndSweatshirt.png" alt="video 2">
-                <source src="assets/Projects/3DModels/FreelanceWork/ShirtAndSweaterRender_Web.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-            <figure class="gallery__item gallery__item__vid--5">
-              <video controls loop autoplay muted class="gallery__vid__contain_Height"
-                poster="assets\Projects\3DModels\FreelanceWork\Shoes.png" alt="Video 3">
-                <source src="assets/Projects/3DModels/FreelanceWork/shoesFinal_Web.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-            <figure class="gallery__item gallery__item__vid--6">
-              <video controls loop autoplay muted class="gallery__vid__contain_Width"
-                poster="assets\Projects\3DModels\FreelanceWork\Starpose.png" alt="Video 4">
-                <source src="assets\Projects\3DModels\FreelanceWork\VideoStarposeRound_Web.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-			</figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="section animate__animated animate__slideInUp" id="portfolio">
-        <div class="container">
-          <h3 class="portfolio__title">Experimental Work</h3>
-          <div class="gallery">
-            <figure class="gallery__item gallery__item__image--1">
-              <img decoding="async" loading="lazy" src="assets\Projects\3DModels\FreeTimeWork\Bloeiend2.jpg"
-                class="gallery__img" alt="Image 1">
-            </figure>
-            <figure class="gallery__item gallery__item__image--2">
-              <img decoding="async" loading="lazy" src="assets\Projects\3DModels\FreeTimeWork\duckPicture2.jpg"
-                class="gallery__img" alt="Image 2">
-            </figure>
-            <figure class="gallery__item gallery__item__image--3">
-              <img decoding="async" loading="lazy" src="assets\Projects\3DModels\FreeTimeWork\clouds BG.jpg"
-                class="gallery__img" alt="Image 3">
-            </figure>
-            <figure class="gallery__item gallery__item__image--5">
-              <img decoding="async" loading="lazy" src="assets\Projects\3DModels\FreeTimeWork\ThijsHead.jpg"
-                class="gallery__img" alt="Image 5">
-            </figure>
-            <figure class="gallery__item gallery__item__image--6">
-              <img decoding="async" loading="lazy" src="assets\Projects\3DModels\FreeTimeWork\wolken.jpg"
-                class="gallery__img" alt="Image 6">
-            </figure>
-			  <figure class="gallery__item gallery__item__image--7">
-              <img decoding="async" loading="lazy" src="assets\Projects\3DModels\FreeTimeWork\randomshizzleLow.jpg"
-                class="gallery__img" alt="Image 7">
-            </figure>
-            <figure class="gallery__item gallery__item__image--8">
-              <img decoding="async" loading="lazy" src="assets\Projects\Chorís Ánchos\YogaBackroom.png"
-                class="gallery__img" alt="Image 7">
-            </figure>
-            <figure class="gallery__item gallery__item__image--9">
-              <img decoding="async" loading="lazy" src="assets\Projects\Chorís Ánchos\YogaMainPose.png"
-                class="gallery__img" alt="Image 7">
-            </figure>
-            <figure class="gallery__item gallery__item__image--10">
-              <img decoding="async" loading="lazy" src="assets\Projects\Chorís Ánchos\YogaRoomTopdown.png"
-              class="gallery__img" alt="Image 7">
-            </figure>
-            </figure>
-          </div>
-        </div>
-      </section>
-
+  <!-- Portfolio Section with SVG Icons -->
+  <section id="portfolio-icons" class="portfolio-icons-section">
+    <div class="icon-container" style="text-align: center; margin: 30px 0;">
+      <a href="https://github.com/kianniek" target="_blank" class="icon-link" style="margin: 0 20px; text-decoration: none;">
+        <!-- GitHub SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48A13.38 13.38 0 0 0 12 2a13.38 13.38 0 0 0-4 .48C5.27.66 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.71c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="www.linkedin.com/in/kianhamidi" target="_blank" class="icon-link" style="margin: 0 20px; text-decoration: none;">
+        <!-- LinkedIn SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a href="https://your-website.com/resume.pdf" target="_blank" class="icon-link" style="margin: 0 20px; text-decoration: none;">
+        <!-- Resume SVG (Document Icon) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <line x1="10" y1="9" x2="8" y2="9"></line>
+        </svg>
+      </a>
+    </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer__copyright">
-      <p><a href="#">&hearts; Thanks for taking a look at my portfolio &hearts;</a></p>
-      <small>
-        <p id="copyright"></p>
-        <p class="portfolio__contentSideNote ">All content shown on this page is in ownership of <a class="no-hyperlink"
-            href="https://www.linkedin.com/in/kian-niek-hamidi-30042004kn">Kian Niek Hamidi Abd Abad</a>. Please do not
-          use without permission.</p>
-      </small>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="portfolio-grid">
+      <!-- Project cards will be dynamically added here by JavaScript -->
     </div>
-  </footer>
+  </section>
 
-  <!-- SplideJs v3 -->
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.1/dist/js/splide.min.js"></script>
-  <!-- Scroll Reveal -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <!-- App Scripts -->
-  <script src="scripts/app.js"></script>
+  <!-- JS Scripts -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script src="js/portfolio.js"></script>
+  
 </body>
 
 </html>
