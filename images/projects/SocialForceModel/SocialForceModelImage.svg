@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#1e293b"/>
+  
+  <!-- Corridor walls -->
+  <line x1="0" y1="80" x2="800" y2="80" stroke="#475569" stroke-width="3"/>
+  <line x1="0" y1="320" x2="800" y2="320" stroke="#475569" stroke-width="3"/>
+  
+  <!-- Bottleneck walls -->
+  <line x1="300" y1="80" x2="380" y2="170" stroke="#475569" stroke-width="3"/>
+  <line x1="300" y1="320" x2="380" y2="230" stroke="#475569" stroke-width="3"/>
+  <line x1="380" y1="170" x2="420" y2="170" stroke="#475569" stroke-width="3"/>
+  <line x1="380" y1="230" x2="420" y2="230" stroke="#475569" stroke-width="3"/>
+  <line x1="420" y1="170" x2="500" y2="80" stroke="#475569" stroke-width="3"/>
+  <line x1="420" y1="230" x2="500" y2="320" stroke="#475569" stroke-width="3"/>
+  
+  <!-- Blue agents (left to right) -->
+  <circle cx="120" cy="180" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="150" cy="220" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="100" cy="250" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="180" cy="160" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="200" cy="210" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="160" cy="280" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="230" cy="190" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="260" cy="240" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="350" cy="200" r="8" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="400" cy="195" r="8" fill="#3b82f6" opacity="0.9"/>
+  
+  <!-- Red agents (right to left) -->
+  <circle cx="680" cy="190" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="650" cy="230" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="700" cy="260" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="620" cy="170" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="600" cy="220" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="640" cy="290" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="570" cy="200" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="540" cy="250" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="450" cy="200" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="410" cy="205" r="8" fill="#ef4444" opacity="0.9"/>
+  
+  <!-- Force vectors (small arrows) -->
+  <line x1="120" y1="180" x2="140" y2="178" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="680" y1="190" x2="660" y2="188" stroke="#ef4444" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Title -->
+  <text x="400" y="370" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="16" font-weight="bold">Social Force Model — Pedestrian Dynamics Simulation</text>
+</svg>

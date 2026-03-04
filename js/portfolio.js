@@ -1,22 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function ()
+{
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('id');  // Get the project ID from the URL
     const openContext = urlParams.get('openContext');  // Get the openContext parameter
 
     fetch('data/portfolio.json')
         .then(response => response.json())
-        .then(data => {
+        .then(data =>
+        {
             const portfolioGrid = document.querySelector('.portfolio-grid');
             const modal = document.createElement('div');
             modal.className = 'project-modal hidden';
             document.body.appendChild(modal);
 
             // Sort options
-            const customOrder = ["012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
+            const customOrder = ["014", "013", "012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
             const hiddenProjects = ["012", "011"];
 
             // Function to sort by custom array of IDs
-            const sortByCustomOrder = (a, b) => {
+            const sortByCustomOrder = (a, b) =>
+            {
                 const indexA = customOrder.indexOf(a.ID);
                 const indexB = customOrder.indexOf(b.ID);
                 return indexA - indexB;
@@ -28,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Render projects
-            data.projects.forEach(project => {
+            data.projects.forEach(project =>
+            {
                 if (hiddenProjects.includes(project.ID)) return;
 
                 const card = document.createElement('div');
@@ -40,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="portfolio-title">${project.title}</div>
                 `;
 
-                card.addEventListener('click', () => {
+                card.addEventListener('click', () =>
+                {
                     openModal(project);
                 });
 
@@ -59,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // Add pulsing effect (optional)
                         projectElement.classList.add('pulse-effect');
-                        setTimeout(() => {
+                        setTimeout(() =>
+                        {
                             projectElement.classList.remove('pulse-effect');
                         }, 5000);
 
@@ -71,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            function openModal(project) {
+            function openModal(project)
+            {
                 let modalContent = `
                     <div class="modal-content">
                         <button class="close-modal">&times;</button>
@@ -117,7 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.style.overflow = 'hidden';
                 modal.classList.remove('hidden');
                 document.querySelector('.close-modal').addEventListener('click', closeModal);
-                modal.addEventListener('click', function (e) {
+                modal.addEventListener('click', function (e)
+                {
                     if (e.target === modal) closeModal();
                 });
 
@@ -125,7 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.history.replaceState({}, document.title, window.location.pathname + '?id=' + project.ID + '&openContext=true');
             }
 
-            function closeModal() {
+            function closeModal()
+            {
                 //remove all the url parameters
                 window.history.replaceState({}, document.title, window.location.pathname);
                 document.body.style.overflow = 'auto';

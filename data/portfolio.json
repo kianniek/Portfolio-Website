@@ -193,6 +193,21 @@
             "programs": [],
             "team_size": 1,
             "github": "https://github.com/kianniek/DirectX-12-Engine"
+        },
+        {
+            "ID": "014",
+            "title": "Social Force Model Simulation",
+            "description": "An interactive web-based simulation of the Social Force Model for pedestrian dynamics, based on the 1995 paper by Helbing & Molnár. The simulation demonstrates how pedestrians navigate through environments using forces such as desired direction, social repulsion, and wall avoidance. Users can adjust parameters in real-time, toggle between different map layouts (open corridor, narrow bottleneck, obstacle boxes), and visualize the force vectors acting on each agent. Built with React and HTML5 Canvas, this project showcases emergent crowd behaviors arising from simple individual rules.",
+            "image": "images/projects/SocialForceModel/SocialForceModelImage.svg",
+            "color": "#1e293b",
+            "timeline": "2025 - Utrecht University",
+            "engine": "",
+            "language": ["JavaScript", "React", "HTML5 Canvas"],
+            "programs": ["VS Code", "Node.js"],
+            "team_size": 1,
+            "role": ["Solo Developer"],
+            "link": "WebProjects/UU/SocialForceModel/build/index.html",
+            "github": ""
         }
     ],
     "contact": {
