@@ -1,0 +1,3 @@
+[submodule "WebProjects/UU/SocialForceModel"]
+	path = WebProjects/UU/SocialForceModel
+	url = git@github.com:kianniek/Implementation-of-the-social-force-model-for-pedestrian-dynamics.git
