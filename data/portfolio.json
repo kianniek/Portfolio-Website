@@ -208,6 +208,21 @@
             "role": ["Solo Developer"],
             "link": "WebProjects/UU/SocialForceModel/build/index.html",
             "github": ""
+        },
+        {
+            "ID": "015",
+            "title": "Boid Simulation running on a WebGPU (100K at 60Hz)",
+            "description": "A research project focused on developing a high-performance Boid simulation using WebGPU, capable of simulating 100,000 agents at 60 frames per second. The project involved implementing the Boid algorithm, which models flocking behavior through simple rules of alignment, cohesion, and separation. By leveraging the parallel processing capabilities of WebGPU, the simulation efficiently manages large numbers of agents while maintaining real-time performance. This project demonstrates expertise in GPU programming, optimization techniques, and the practical application of WebGPU for complex simulations in a web environment.",
+            "image": "Images/projects/boidSimulation/BoidSimulationImage.png",
+            "color": "#10060F",
+            "timeline": "February 2026 - April 2026",
+            "engine": "",
+            "language": ["JavaScript", "WebGPU", "WGSL"],
+            "programs": ["Node.js", "Vite"],
+            "team_size": 4,
+            "role": ["Researcher", "Developer"],
+            "link": "WebProjects/UU/BoidSimulation/index.html",
+            "github": "https://github.com/kianniek/BoidsOnWebGPU"
         }
     ],
     "contact": {

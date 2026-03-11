@@ -1,0 +1,14 @@
+{
+  "name": "web-projects-root",
+  "version": "1.0.0",
+  "description": "Orchestrator for web projects",
+  "private": true,
+  "scripts": {
+    "build:all": "npm-run-all --parallel build:boids build:social",
+    "build:boids": "cd UU/BoidsOnWebGPU && npx vite build --base ./",
+    "build:social": "cd UU/SocialForceModel && npm run build"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
