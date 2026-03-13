@@ -93,7 +93,7 @@
         {
             "ID": "007",
             "title": "The Light (At the End of the Tunnel)",
-            "description": "This platformer is set in a sewer, where the objective is to reach the light at the end of the tunnel and replace a broken bulb. The game consists of five distinct levels, each presenting unique challenges: *Sinking Area*, where the environment is gradually submerged; *Flip Swap Level*, which involves alternating platforms; *Air Pipe Part*, focused on navigating air currents; *Rotating Puzzle*, a level filled with spinning mechanisms to solve; and *The Speedrun Rotation*, a fast-paced challenge testing the player's agility. Each level offers a different gameplay experience, requiring skill and strategy to complete.",
+            "description": "This platformer is set in a sewer, where the objective is to reach the light at the end of the tunnel and replace a broken bulb. The game consists of five distinct levels, each presenting unique challenges: <b>Sinking Area</b>, where the environment is gradually submerged; <b>Flip Swap Level</b>, which involves alternating platforms; <b>Air Pipe Part</b>, focused on navigating air currents; <b>Rotating Puzzle</b>, a level filled with spinning mechanisms to solve; and <b>The Speedrun Rotation</b>, a fast-paced challenge testing the player's agility. Each level offers a different gameplay experience, requiring skill and strategy to complete.",
             "image": "images/projects/TheLight/TheLightAtTheEnd.jpg",
             "color": "#FF6633",
             "role": ["Lead Developer", "Designer", "Project Manager"],
@@ -213,7 +213,7 @@
             "ID": "015",
             "title": "Boid Simulation running on a WebGPU (100K at 60Hz)",
             "description": "A research project focused on developing a high-performance Boid simulation using WebGPU, capable of simulating 100,000 agents at 60 frames per second. The project involved implementing the Boid algorithm, which models flocking behavior through simple rules of alignment, cohesion, and separation. By leveraging the parallel processing capabilities of WebGPU, the simulation efficiently manages large numbers of agents while maintaining real-time performance. This project demonstrates expertise in GPU programming, optimization techniques, and the practical application of WebGPU for complex simulations in a web environment.",
-            "image": "Images/projects/boidSimulation/BoidSimulationImage.png",
+            "image": "images/projects/BoidWebGPU/Boids.gif",
             "color": "#10060F",
             "timeline": "February 2026 - April 2026",
             "engine": "",
@@ -221,7 +221,7 @@
             "programs": ["Node.js", "Vite"],
             "team_size": 4,
             "role": ["Researcher", "Developer"],
-            "link": "WebProjects/UU/BoidSimulation/index.html",
+            "link": "WebProjects/UU/BoidsOnWebGPU/dist/index.html",
             "github": "https://github.com/kianniek/BoidsOnWebGPU"
         }
     ],
