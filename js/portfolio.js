@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function ()
             modal.className = 'project-modal hidden';
             document.body.appendChild(modal);
 
-            // Sort options
+            // Sort options 
             const customOrder = ["015", "014", "013", "012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
             const hiddenProjects = ["012", "011"];
 

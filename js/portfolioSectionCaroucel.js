@@ -1,17 +1,20 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function ()
+{
     // Fetch the JSON data
     fetch('data/portfolio.json') // Adjust the path to where your JSON file is located
         .then(response => response.json()) // Parse the JSON data
-        .then(data => {
+        .then(data =>
+        {
             let projects = data.projects;
             let currentIndex = 0;
 
             // Sort options
-            const customOrder = ["012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
+            const customOrder = ["015", "014", "013", "012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
             const hiddenProjects = ["012", "011"];
 
             // Function to sort by custom array of IDs
-            const sortByCustomOrder = (a, b) => {
+            const sortByCustomOrder = (a, b) =>
+            {
                 const indexA = customOrder.indexOf(a.ID);
                 const indexB = customOrder.indexOf(b.ID);
                 return indexA - indexB;
@@ -54,7 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Function to set the project taglines dynamically based on the role/description
-            function setProjectTaglineBasedOnTerms(project) {
+            function setProjectTaglineBasedOnTerms(project)
+            {
                 const headerTextContainer = document.querySelector('.headerText-projectCard');
                 const taglineGroup = document.createElement('div');
                 taglineGroup.className = 'tagline-group';
@@ -71,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(taglines);
 
                 // Loop through the terms and create a new tagline-textWrapper for each tagline
-                taglines.forEach((roleTagline) => {
+                taglines.forEach((roleTagline) =>
+                {
                     if (!projectTaglines[roleTagline]) return;
 
                     // Create a new <div> with class "tagline-textWrapper"
@@ -97,7 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Function to update the project displayed
-            function updateProject(index) {
+            function updateProject(index)
+            {
                 const project = projects[index];
                 const projectImage = document.getElementById('project-image');
                 const projectTitle = document.getElementById('project-title');
@@ -116,12 +122,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Event listeners for next and previous arrows
-            document.getElementById('next-arrow').addEventListener('click', function () {
+            document.getElementById('next-arrow').addEventListener('click', function ()
+            {
                 currentIndex = (currentIndex + 1) % projects.length;
                 updateProject(currentIndex);
             });
 
-            document.getElementById('prev-arrow').addEventListener('click', function () {
+            document.getElementById('prev-arrow').addEventListener('click', function ()
+            {
                 currentIndex = (currentIndex - 1 + projects.length) % projects.length;
                 updateProject(currentIndex);
             });
@@ -129,7 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Initial project update
             updateProject(currentIndex);
         })
-        .catch(error => {
+        .catch(error =>
+        {
             console.error('Error fetching the JSON file:', error);
         });
 });
