@@ -136,7 +136,7 @@
         const track = document.getElementById('logo-carousel');
 
         // We double the array to create a seamless loop for the CSS animation
-        const fullList = [...logoFiles, ...logoFiles];
+        const fullList = [...logoFiles];
 
         track.innerHTML = fullList.map(name => {
           const cleanName = name.replace('.svg', '');

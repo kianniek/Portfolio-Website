@@ -1,95 +1,144 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function ()
+{
   const carousel = document.querySelector('.carousel');
-  let isHovering = false; // Boolean to track hover state
+  if (!carousel) return;
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
 
-	// Stop script if reduced motion is preferred
-  if (prefersReducedMotion) {
-    console.log("Reduced motion is enabled. Stopping the script.");
-    return; // Exit the function early
-  }
-  // Helper functions to manipulate images
-  function getAllImages() {
-    return Array.from(carousel.querySelectorAll('img'));
+  // --- Configuration & State ---
+  let isHovering = false;
+  let speed = 0;
+  const maxSpeed = 10;
+  const lerpAmount = 0.08;
+  // Minimum gap between logos as a multiple of the logo width (1 = one logo width)
+  const minGapFactor = 1;
+
+  let images = Array.from(carousel.querySelectorAll('img'));
+  if (images.length === 0) return;
+  const originalCount = images.length;
+
+  // Ensure container is a positioned element for absolute children
+  const carouselStyle = getComputedStyle(carousel);
+  if (carouselStyle.position === 'static') carousel.style.position = 'relative';
+
+  let imagePositions = [];
+  let spacing = 0;
+
+  // Wait until all images are loaded so sizes are accurate
+  function waitForImagesLoaded(imgs)
+  {
+    return Promise.all(imgs.map(img => new Promise(resolve =>
+    {
+      if (img.complete && img.naturalWidth !== 0) return resolve();
+      img.addEventListener('load', resolve);
+      img.addEventListener('error', resolve);
+    })));
   }
 
-  function adjustSpacing(newSpacing) {
-    spacing = newSpacing;
-    carousel.querySelectorAll('img').forEach(img => {
-      img.style.marginRight = `${spacing}px`;
+  function initializePositions()
+  {
+    // Remove previously cloned images (from earlier initializations)
+    const previousClones = carousel.querySelectorAll('img[data-clone="true"]');
+    previousClones.forEach(n => n.remove());
+
+    // Refresh images list (only originals remain)
+    images = Array.from(carousel.querySelectorAll('img'));
+
+    imagePositions = [];
+    // Use even spacing: screen (carousel) width divided by original count
+    const carouselWidth = carousel.getBoundingClientRect().width;
+    spacing = Math.floor(carouselWidth / Math.max(originalCount, 1));
+
+    // Position originals evenly using calculated spacing
+    images.forEach((img, i) =>
+    {
+      img.style.position = 'absolute';
+      img.style.top = '50%';
+      img.style.willChange = 'transform';
+
+      const pos = i * spacing;
+      imagePositions[i] = pos;
+      img.style.transform = `translateX(${pos}px) translateY(-50%)`;
     });
+
+    // Ensure carousel has enough height to show images vertically centered
+    const maxHeight = Math.max(...images.map(img => img.offsetHeight));
+    carousel.style.height = `${maxHeight}px`;
+
+    // Duplicate images using same spacing until covering twice the carousel width
+    const originals = images.slice(0, originalCount);
+    let cumulative = originals.length * spacing;
+    let idx = 0;
+    while (cumulative < carouselWidth * 2) {
+      const srcImg = originals[idx % originals.length];
+      const clone = srcImg.cloneNode(true);
+      clone.setAttribute('data-clone', 'true');
+      carousel.appendChild(clone);
+
+      clone.style.position = 'absolute';
+      clone.style.top = '50%';
+      clone.style.willChange = 'transform';
+
+      imagePositions.push(cumulative);
+      clone.style.transform = `translateX(${cumulative}px) translateY(-50%)`;
+      images.push(clone);
+
+      cumulative += spacing;
+      idx++;
+      if (idx > originals.length * 20) break; // safety
+    }
   }
 
-  function adjustSpeed(newSpeed) {
-    speed = newSpeed;
-  }
-	
-  function lerp(start, end, amt) {
-    return (1-amt)*start+amt*end
-  }
+  // --- Event Listeners ---
+  carousel.addEventListener('mouseenter', () => isHovering = true);
+  carousel.addEventListener('mouseleave', () => isHovering = false);
 
-  // Initialization of variables
-  let speed = 0; // Speed of the animation (pixels per millisecond)
-  let maxSpeed = 0.9;
-  let spacing = 20; // Example initial spacing
-  let images = getAllImages();
-  let imagePositions = new Array(images.length).fill(0);
-
-  // Set initial image margins
-  carousel.querySelectorAll('img').forEach(img => {
-    img.style.marginRight = `${spacing}vw`;
+  window.addEventListener('resize', () =>
+  {
+    // Reinitialize sizes/positions on resize
+    initializePositions();
   });
-carousel.addEventListener('mouseover', () => {
-      isHovering = true;
-		console.log(isHovering);
-    });
-    carousel.addEventListener('mouseout', () => {
-      isHovering = false;
-    });
-  // Add hover event listeners to images
 
-  // Animation function
-  function animate() {
-	  if(isHovering){
-		  speed = lerp(speed, 0, 0.01);
-	  }else{
-		  speed = lerp(speed, maxSpeed, 0.01);
-	  }
-    
-    let widthTotal = 0; // Total width of all images to calculate wrapping
-    images.forEach((img, index) => {
-      widthTotal += img.offsetWidth + parseInt(getComputedStyle(img).marginRight);
-    });
+  // Smoothly transitions speed and updates image positions
+  function animate()
+  {
+    const targetSpeed = isHovering ? 0 : maxSpeed;
+    speed = lerp(speed, targetSpeed, lerpAmount);
 
-    images.forEach((img, index) => {
+    images.forEach((img, index) =>
+    {
       imagePositions[index] -= speed;
-      img.style.transform = `translateX(${imagePositions[index]}px)`;
+      img.style.transform = `translateX(${imagePositions[index]}px) translateY(-50%)`;
 
-      let position = img.getBoundingClientRect();
-      if (position.right < 0) {
-        // Wrap images when exiting screen
-        wrapImage(index, widthTotal);
+      const rect = img.getBoundingClientRect();
+      const carouselRect = carousel.getBoundingClientRect();
+      if (rect.right < carouselRect.left - 1) {
+        wrapImage(index);
       }
     });
 
     requestAnimationFrame(animate);
   }
 
-  function wrapImage(currentIndex, totalWidth) {
-    const firstPos = imagePositions[0]; // First position in the array
-    // Shift every element to the left
-    imagePositions.forEach((_, idx) => {
-      if (idx < images.length - 1) {
-        imagePositions[idx] = imagePositions[idx + 1];
-      }
-    });
-    // Set the last position to the right of the last image
-    imagePositions[images.length - 1] = firstPos + totalWidth;
-    // Rearrange the images array for consistent handling
-    const firstImage = images.shift();
-    images.push(firstImage);
-    //console.log(`Image wrapped: ${firstImage.src}`);
+  function wrapImage(currentIndex)
+  {
+    const wrappedImg = images[currentIndex];
+    const maxPos = Math.max(...imagePositions);
+    // Place wrapped image one spacing ahead to keep consistent gaps
+    imagePositions[currentIndex] = maxPos + spacing;
+    wrappedImg.style.transform = `translateX(${imagePositions[currentIndex]}px) translateY(-50%)`;
   }
 
-  animate(); // Start the animation
+  function lerp(start, end, amt)
+  {
+    return (1 - amt) * start + amt * end;
+  }
+
+  // Initialize after images load, then start animation
+  waitForImagesLoaded(images).then(() =>
+  {
+    initializePositions();
+    requestAnimationFrame(animate);
+  });
 });
