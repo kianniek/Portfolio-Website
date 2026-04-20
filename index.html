@@ -18,14 +18,15 @@
   <!-- Bootstrap -->
   <link href="css/style.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Kian Hamidi" />
-<link rel="manifest" href="/favicon/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kian Hamidi" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -68,7 +69,8 @@
     <script>
       // Function to initialize and store the initial font size if not already set
       function initializeFontSize(element) {
-        if (!element.hasAttribute('data-initial-font-size')) {
+        if (!element.hasAttribute('data-initial-font-size'))
+        {
           const initialFontSize = parseFloat(window.getComputedStyle(element).fontSize);
           element.setAttribute('data-initial-font-size', initialFontSize); // Store initial font size
         }
@@ -83,7 +85,8 @@
         element.style.fontSize = `${fontSize}px`;
 
         // Reduce font size until it fits within the parent's width, but don't go below initial size
-        while (element.offsetWidth > parent.offsetWidth && fontSize > 1) {
+        while (element.offsetWidth > parent.offsetWidth && fontSize > 1)
+        {
           fontSize -= 1;
           element.style.fontSize = `${fontSize}px`;
         }
@@ -114,26 +117,33 @@
       });
     </script>
     <div class="carousel-container">
-      <div class="carousel"> <img src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg"
-          alt="Logo 2"> <img src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Logo Hogeschool van Amsterdam – link naar startpagina.svg" alt="Logo 2"> <img
-          src="images/Company Logo's/Rooftop Immersive studio logo.svg" alt="Logo 2">
+      <div class="carousel" id="logo-carousel">
       </div>
     </div>
+
+    <script>
+      (function () {
+        const folder = "images/Company Logo's/";
+
+        const logoFiles = [
+          "Hogeschool_van_Amsterdam_Logo.svg",
+          "Rooftop_Immersive_Studio_logo.svg",
+          "Universiteit_Utrecht_Logo.svg",
+          "Vertigo_Games_Logo.svg"
+          // Add more filenames here...
+        ];
+
+        const track = document.getElementById('logo-carousel');
+
+        // We double the array to create a seamless loop for the CSS animation
+        const fullList = [...logoFiles, ...logoFiles];
+
+        track.innerHTML = fullList.map(name => {
+          const cleanName = name.replace('.svg', '');
+          return `<img src="${folder}${name}" alt="${cleanName}">`;
+        }).join('');
+      })();
+    </script>
     <div class="hero-section-divider">
       <div class="section-divider-line"></div>
     </div>
@@ -229,7 +239,7 @@
     </div>
     </div>
   </section>
-  
+
   <footer id="contact" class="contact">
     <div class="contact-section-divider"></div>
     <div class="footer">
@@ -341,7 +351,7 @@
   <script src="js/style-js.js"></script>
   <!-- <script src="js/restoreScroll.js"></script> -->
   <script src="js/portfolioSectionCaroucel.js"></script>
-    
+
 </body>
 
 </html>
