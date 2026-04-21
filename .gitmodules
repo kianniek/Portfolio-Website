@@ -4,3 +4,14 @@
 [submodule "WebProjects/UU/BoidsOnWebGPU"]
 	path = WebProjects/UU/BoidsOnWebGPU
 	url = git@github.com:alextjanse/BoidBoys.git
+[submodule "housekeepr/App/HouseKeepr"]
+	path = housekeepr/App/HouseKeepr
+	url = git@github.com:kianniek/HouseKeepr.git
+[submodule "housekeepr/App/App/web"]
+	path = housekeepr/App/App/web
+	url = git@github.com:kianniek/HouseKeepr.git
+	branch = release-web
+[submodule "housekeepr/App/web"]
+	path = housekeepr/App/web
+	url = git@github.com:kianniek/HouseKeepr.git
+	branch = release-web
