@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Feestelijke en mobile-friendly achtergrond */
+    background: linear-gradient(135deg, #ffd3b6 0%, #ffaaa5 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: #2d3436;
+}
+
+.verjaardags-kaart {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 90%; /* Mobile friendly - vult nooit hele scherm */
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem;
+}
+
+h1 {
+    color: #e17055;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    color: #636e72;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.foto-container {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1; /* Hiermee houden we het altijd vierkant */
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #ff7675;
+    box-shadow: 0 8px 15px rgba(255, 118, 117, 0.4);
+    margin: 10px auto;
+}
+
+.verjaardags-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorgt dat het netjes in de ronde container past */
+}
+
+.bericht {
+    font-size: 1.1rem;
+    color: #636e72;
+    font-style: italic;
+}
+
+button {
+    background-color: #fab1a0;
+    color: #2d3436;
+    border: 2px solid transparent;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 15px rgba(250, 177, 160, 0.6);
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #ff7675;
+    color: white;
+    transform: scale(1.05); /* Kleine animate voor de knop */
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .verjaardags-kaart {
+        padding: 1.5rem;
+    }
+    .foto-container {
+        max-width: 200px;
+    }
+}
