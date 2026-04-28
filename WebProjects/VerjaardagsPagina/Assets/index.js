@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () =>
 {
-  // 1. Mask URL zodat het "Gefelicteerd-met-je-verjaardag" toont in the browser. 
-  // Hier passen we enkel het einde wat aan visueel, mits ondersteund door de history API van de browser.
-  window.history.replaceState(null, '', '/Gefelicteerd-met-je-verjaardag');
 
   // 2. Elementen pakken
   const confettiKnop = document.getElementById('confetti-knop');
