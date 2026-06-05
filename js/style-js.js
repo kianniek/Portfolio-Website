@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function ()
   // --- Configuration & State ---
   let isHovering = false;
   let speed = 0;
-  const maxSpeed = 10;
+  const maxSpeed = 1;
   const lerpAmount = 0.08;
   // Minimum gap between logos as a multiple of the logo width (1 = one logo width)
   const minGapFactor = 1;
@@ -45,10 +45,12 @@ document.addEventListener("DOMContentLoaded", function ()
     // Refresh images list (only originals remain)
     images = Array.from(carousel.querySelectorAll('img'));
 
+    maxImageWidth = Math.max(...images.map(img => img.offsetWidth));
+
     imagePositions = [];
     // Use even spacing: screen (carousel) width divided by original count
     const carouselWidth = carousel.getBoundingClientRect().width;
-    spacing = Math.floor(carouselWidth / Math.max(originalCount, 1));
+    spacing = Math.floor(maxImageWidth * minGapFactor) + Math.ceil(carouselWidth / originalCount);
 
     // Position originals evenly using calculated spacing
     images.forEach((img, i) =>

@@ -1,17 +1,59 @@
-document.addEventListener('DOMContentLoaded', () =>
+document.addEventListener('DOMContentLoaded', async () =>
 {
+  // Mask URL zodat het "Gefelicteerd-met-je-verjaardag" toont in the browser. 
+  if (window.history.replaceState) {
+    window.history.replaceState(null, '', '/Gefelicteerd-met-je-verjaardag');
+  }
 
-  // 2. Elementen pakken
+  // Elementen pakken
   const confettiKnop = document.getElementById('confetti-knop');
-  // Kan je hieronder de tekst wijzigen voor de jarige 
   const naamLeeftijdEl = document.getElementById('naam-leeftijd');
+  const fotoContainer = document.getElementById('foto-container');
+  const verjaardagsFoto = document.getElementById('verjaardags-foto');
 
-  // Voeg hier naam en leeftijd toe:
-  const naam = "Samuël";
-  const leeftijd = 17; // Vervang door zijn echte leeftijd
-  naamLeeftijdEl.textContent = `${naam}, ${leeftijd} jaar!`;
+  try {
+    const res = await fetch('data.json');
+    const data = await res.json();
+    
+    // Bepaal de datum van vandaag (zonder jaar)
+    const today = new Date();
+    const todayStr = (today.getMonth() + 1).toString().padStart(2, '0') + '-' + today.getDate().toString().padStart(2, '0');
 
-  // 3. Effect activeren via the canvas-confetti library
+    // Zoek de jarige van vandaag 
+    const jarige = data.find(person => {
+      if (!person.Date) return false;
+      return person.Date.substring(5) === todayStr;
+    });
+
+    if (jarige) {
+      if (jarige.DateOfBirth) {
+        const birthYear = parseInt(jarige.DateOfBirth.substring(0, 4));
+        const leeftijd = today.getFullYear() - birthYear;
+        naamLeeftijdEl.textContent = `${jarige.Title}, ${leeftijd} jaar!`;
+      } else {
+        naamLeeftijdEl.textContent = jarige.Title; // Alleen de naam als de leeftijd er niet is
+      }
+
+      // Probeer de foto in te laden
+      verjaardagsFoto.onerror = () => {
+        fotoContainer.style.display = 'none'; // Verberg als foto niet bestaat
+      };
+      verjaardagsFoto.onload = () => {
+        fotoContainer.style.display = 'block'; // Toon als foto succesvol laadt
+      };
+      
+      // Zoek een foto in de Assets folder met de naam van de persoon
+      verjaardagsFoto.src = `Assets/${jarige.Title.replace(/\s+/g, '')}.jpeg`;
+    } else {
+      naamLeeftijdEl.textContent = 'Hoera!'; 
+      fotoContainer.style.display = 'none';
+    }
+  } catch(e) {
+    console.error('Kon json data niet inladen', e);
+    fotoContainer.style.display = 'none';
+  }
+
+  // Effect activeren via the canvas-confetti library
   confettiKnop.addEventListener('click', () =>
   {
     // Een mooi confetti effect 
