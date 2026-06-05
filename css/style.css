@@ -6552,7 +6552,7 @@ a.text-dark:hover {
   height: auto;
   border-radius: 31.25rem;
   flex-shrink: 0;
-  background: url(images/35X35.gif) 50% / cover no-repeat #d3d3d3;
+  background: url(../images/35X35.gif) 50% / cover no-repeat #d3d3d3;
 }
 
 .aboutImage .imageBackground {
@@ -6674,7 +6674,8 @@ a.text-dark:hover {
   overflow: hidden;
   flex-wrap: nowrap;
   align-content: space-between;
-  justify-content: flex-start
+  justify-content: flex-start;
+  width: min-content;
 }
 
 .arrows-projectCard {
@@ -11753,7 +11754,7 @@ a.text-dark:hover {
     height: auto;
     border-radius: 31.25rem;
     flex-shrink: 0;
-    background: url(images/35X35.gif) 50% / cover no-repeat #d3d3d3;
+    background: url(../images/35X35.gif) 50% / cover no-repeat #d3d3d3;
   }
 
   .about>div>.imageBackground {

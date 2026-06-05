@@ -81,7 +81,6 @@
         const parent = element.parentElement;
         const initialFontSize = parseFloat(element.getAttribute('data-initial-font-size'));
         let fontSize = initialFontSize; // Reset to the initial font size on each resize
-        console.log(element.offsetWidth + " | " + parent.offsetWidth);
         element.style.fontSize = `${fontSize}px`;
 
         // Reduce font size until it fits within the parent's width, but don't go below initial size
@@ -174,6 +173,7 @@
       </div>
       <div class="project-card">
         <div class="image-group" id="project-thumbnail">
+          <img id="project-image">
           <!--video or Image is placed here by js/portfolioSectionCaroucel.js-->
         </div>
         <div class="textWrapper-projectCard">

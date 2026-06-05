@@ -103,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function ()
             function updateProject(index)
             {
                 const project = projects[index];
-                const projectImage = document.getElementById('project-thumbnail');
+                const projectImage = document.getElementById('project-image');
                 const projectTitle = document.getElementById('project-title');
                 const projectDescription = document.getElementById('project-description');
-                if (!projectImage || !projectTitle || !projectDescription) return;
+
                 projectImage.src = project.image;
                 projectTitle.textContent = project.title;
                 projectDescription.innerHTML = `
