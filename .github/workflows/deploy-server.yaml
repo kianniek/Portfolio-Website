@@ -10,12 +10,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Git Reset, Fetch and Pull on Server
+      - name: Hard Reset and Sync with Origin
         run: |
           cd /var/www/kianhamidi.com/public_html/
-          git reset --hard HEAD
-          git clean -fd
           git fetch origin master
-          git pull origin master
+          git reset --hard origin/master
+          git clean -fd
           git submodule sync --recursive
           git submodule update --init --recursive
