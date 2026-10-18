@@ -328,7 +328,7 @@
     {
       "ID": "016",
       "title": "Heroes vs. Robots",
-      "description": "Heroes vs. Robots is an arena combat game built for Meta Horizon platforms, where players use elemental powers to defend civilians against invading robot waves across Mayhem and Sabotage mission modes[cite: 1]. As an Intern / Junior Programmer, I collaborated with artists, designers, and sound engineers to prototype and program player attacks and elemental abilities[cite: 1]. I also built and structured the core enemy wave system to handle dynamic encounter progression using TypeScript and React[cite: 1].",
+      "description": "Heroes vs. Robots is an arena combat game built for Meta Horizon platforms, where players use elemental powers to defend civilians against invading robot waves across Mayhem and Sabotage mission modes. As an Intern / Junior Programmer, I collaborated with artists, designers, and sound engineers to prototype and program player attacks and elemental abilities. I also built and structured the core enemy wave system to handle dynamic encounter progression using TypeScript and React.",
       "image": "images/projects/HeroesVsRobots/HeroesVsRobots.avif",
       "color": "#3b82f6",
       "timeline": "Vertigo Games Internship",
@@ -365,9 +365,35 @@
       ],
       "team_size": 3,
       "role": [
-        "Gameplay Programmer"
+        "Gameplay Programmer",
+        "Prototyper"
       ],
       "link": "",
+      "github": ""
+    },
+    {
+      "ID": "018",
+      "title": "ABCD & E WordPress Website",
+      "description": "A custom WordPress website designed and developed for ABCD & E, delivering a professional digital presence and tailored web experience.",
+      "image": "images/projects/abcd_en_e/screenshot.png",
+      "color": "#21759b",
+      "timeline": "Professional Portfolio",
+      "engine": "WordPress",
+      "language": [
+        "PHP",
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "programs": [
+        "Visual Studio Code",
+        "WordPress"
+      ],
+      "team_size": 1,
+      "role": [
+        "Solo Developer"
+      ],
+      "link": "https://abcd-en-e.nl/",
       "github": ""
     }
   ],
