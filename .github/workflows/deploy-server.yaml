@@ -1,0 +1,21 @@
+name: Deploy Portfolio Website via Git Pull
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Git Reset, Fetch and Pull on Server
+        run: |
+          cd /var/www/kianhamidi.com/public_html/
+          git reset --hard HEAD
+          git clean -fd
+          git fetch origin master
+          git pull origin master
+          git submodule sync --recursive
+          git submodule update --init --recursive
