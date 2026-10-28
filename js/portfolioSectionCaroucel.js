@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async () =>
 
         if (projects.length === 0) return;
 
-        let currentIndex = 0;
+        let currentIndex = projects.length - 1; // Start bij het laatste project
 
         const updateProject = (index) =>
         {
@@ -104,13 +104,13 @@ document.addEventListener('DOMContentLoaded', async () =>
         // Event listeners voor navigatie
         nextBtn?.addEventListener('click', () =>
         {
-            currentIndex = (currentIndex + 1) % projects.length;
+            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
             updateProject(currentIndex);
         });
 
         prevBtn?.addEventListener('click', () =>
         {
-            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+            currentIndex = (currentIndex + 1) % projects.length;
             updateProject(currentIndex);
         });
 
