@@ -1,145 +1,134 @@
-document.addEventListener("DOMContentLoaded", function ()
+document.addEventListener("DOMContentLoaded", async () =>
 {
+    const portfolioGrid = document.querySelector('.portfolio-grid');
+    if (!portfolioGrid) return;
+
     const urlParams = new URLSearchParams(window.location.search);
-    const projectId = urlParams.get('id');  // Get the project ID from the URL
-    const openContext = urlParams.get('openContext');  // Get the openContext parameter
+    const targetProjectId = urlParams.get('id');
+    const shouldOpenModal = urlParams.get('openContext') === 'true';
 
-    fetch('data/portfolio.json')
-        .then(response => response.json())
-        .then(data =>
+    // Modal opzetten in de DOM
+    const modal = document.createElement('div');
+    modal.className = 'project-modal hidden';
+    document.body.appendChild(modal);
+
+    const closeModal = () =>
+    {
+        window.history.replaceState({}, document.title, window.location.pathname);
+        document.body.style.overflow = 'auto';
+        modal.classList.add('hidden');
+    };
+
+    const formatList = (val) => (Array.isArray(val) ? val.join(', ') : val);
+
+    const openModal = (project) =>
+    {
+        const detailFields = [
+            { label: 'Timeline', value: project.timeline },
+            { label: 'Engine', value: project.engine },
+            { label: 'Languages', value: formatList(project.language) },
+            { label: 'Programs', value: formatList(project.programs) },
+            { label: 'Team Size', value: project.team_size },
+            { label: 'Role', value: formatList(project.role) },
+            { label: 'Credits', value: formatList(project.credits) },
+            { label: 'Disclaimers', value: project.disclaimers }
+        ];
+
+        let detailsHtml = detailFields
+            .filter(field => field.value)
+            .map(field => `<p><strong>${field.label}:</strong> ${field.value}</p>`)
+            .join('');
+
+        if (project.link) {
+            detailsHtml += `<p><strong>Project Link:</strong> <a href="${project.link}" target="_blank" rel="noopener noreferrer">View Project</a></p>`;
+        }
+
+        if (project.sources && project.sources.length > 0) {
+            const sourceList = Array.isArray(project.sources) ? project.sources : [project.sources];
+            const sourceLinks = sourceList.map((src, idx) =>
+            {
+                let domain = `Source ${idx + 1}`;
+                try {
+                    domain = new URL(src).hostname.replace(/^www\./, '');
+                } catch {
+                    // Fallback naar standaard label bij ongeldige URL
+                }
+                return `<a href="${src}" target="_blank" rel="noopener noreferrer">${domain}</a>`;
+            }).join(' | ');
+
+            detailsHtml += `<p><strong>Sources:</strong> ${sourceLinks}</p>`;
+        }
+
+        if (project.github) {
+            detailsHtml += `<p><strong>GitHub Link:</strong> <a href="${project.github}" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>`;
+        }
+
+        modal.innerHTML = `
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Sluit modal">&times;</button>
+                <div class="project-details">
+                    <h2>${project.title}</h2>
+                    <p>${project.description || ''}</p>
+                    ${detailsHtml}
+                </div>
+            </div>
+        `;
+
+        document.body.style.overflow = 'hidden';
+        modal.classList.remove('hidden');
+
+        modal.querySelector('.close-modal').addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) =>
         {
-            const portfolioGrid = document.querySelector('.portfolio-grid');
-            const modal = document.createElement('div');
-            modal.className = 'project-modal hidden';
-            document.body.appendChild(modal);
+            if (e.target === modal) closeModal();
+        });
 
-            // Sort options 
-            const customOrder = ["015", "014", "013", "012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
-            const hiddenProjects = ["012", "011"];
+        window.history.replaceState(
+            {},
+            document.title,
+            `${window.location.pathname}?id=${encodeURIComponent(project.ID)}&openContext=true`
+        );
+    };
 
-            // Function to sort by custom array of IDs
-            const sortByCustomOrder = (a, b) =>
-            {
-                const indexA = customOrder.indexOf(a.ID);
-                const indexB = customOrder.indexOf(b.ID);
-                return indexA - indexB;
-            };
+    try {
+        const response = await fetch('data/portfolio.json');
+        if (!response.ok) throw new Error(`HTTP-fout: ${response.status}`);
 
-            // Apply sorting: custom sorting is prioritized
-            if (customOrder.length > 0) {
-                data.projects.sort(sortByCustomOrder);
-            }
+        const data = await response.json();
+        // Alleen projecten tonen waarvan 'hidden' niet waar (true) is
+        const projects = (data.projects || []).filter(p => !p.hidden);
 
-            // Render projects
-            data.projects.forEach(project =>
-            {
-                if (hiddenProjects.includes(project.ID)) return;
+        // Kaarten renderen
+        projects.toReversed().forEach(project =>
+        {
+            const card = document.createElement('div');
+            card.className = 'portfolio-card';
+            card.id = project.ID;
+            card.style.background = project.color || 'transparent';
+            card.innerHTML = `
+                <img src="${project.image}" alt="${project.title}">
+                <div class="portfolio-title">${project.title}</div>
+            `;
+            card.addEventListener('click', () => openModal(project));
+            portfolioGrid.appendChild(card);
+        });
 
-                const card = document.createElement('div');
-                card.className = 'portfolio-card';
-                card.id = project.ID;  // Assign the project's ID as the card's HTML id
-                card.style.background = project.color;
-                card.innerHTML = `
-                    <img src="${project.image}" alt="${project.title}">
-                    <div class="portfolio-title">${project.title}</div>
-                `;
+        // Automatisch navigeren naar specifiek project via querystring
+        if (targetProjectId) {
+            const project = projects.find(p => p.ID === targetProjectId);
+            const projectElement = document.getElementById(targetProjectId);
 
-                card.addEventListener('click', () =>
-                {
+            if (project && projectElement) {
+                projectElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                projectElement.classList.add('pulse-effect');
+                setTimeout(() => projectElement.classList.remove('pulse-effect'), 5000);
+
+                if (shouldOpenModal) {
                     openModal(project);
-                });
-
-                portfolioGrid.appendChild(card);
-            });
-
-            // If projectId is present in the URL, scroll to the project and optionally open the modal
-            if (projectId) {
-                const project = data.projects.find(p => p.ID === projectId);
-                if (project) {
-                    const projectElement = document.getElementById(projectId);
-
-                    if (projectElement) {
-                        // Scroll into view
-                        projectElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                        // Add pulsing effect (optional)
-                        projectElement.classList.add('pulse-effect');
-                        setTimeout(() =>
-                        {
-                            projectElement.classList.remove('pulse-effect');
-                        }, 5000);
-
-                        // Check if openContext is 'true', then open the modal
-                        if (openContext === 'true') {
-                            openModal(project);
-                        }
-                    }
                 }
             }
-
-            function openModal(project)
-            {
-                let modalContent = `
-                    <div class="modal-content">
-                        <button class="close-modal">&times;</button>
-                        <div class="project-details">
-                            <h2>${project.title}</h2>
-                            <p>${project.description}</p>
-                `;
-
-                if (project.timeline) {
-                    modalContent += `<p><strong>Timeline:</strong> ${project.timeline}</p>`;
-                }
-                if (project.engine) {
-                    modalContent += `<p><strong>Engine:</strong> ${project.engine}</p>`;
-                }
-                if (project.language && project.language.length > 0) {
-                    modalContent += `<p><strong>Languages:</strong> ${project.language.join(', ')}</p>`;
-                }
-                if (project.programs && project.programs.length > 0) {
-                    modalContent += `<p><strong>Programs:</strong> ${project.programs.join(', ')}</p>`;
-                }
-                if (project.team_size) {
-                    modalContent += `<p><strong>Team Size:</strong> ${project.team_size}</p>`;
-                }
-                if (project.role) {
-                    modalContent += `<p><strong>Role:</strong> ${project.role}</p>`;
-                }
-                if (project.disclaimers) {
-                    modalContent += `<p><strong>Disclaimers:</strong> ${project.disclaimers}</p>`;
-                }
-                if (project.link) {
-                    modalContent += `<p><strong>Project Link:</strong> <a href="${project.link}" target="_blank">View Project</a></p>`;
-                }
-                if (project.github) {
-                    modalContent += `<p><strong>GitHub Link:</strong> <a href="${project.github}" target="_blank">View on GitHub</a></p>`;
-                }
-
-                modalContent += `
-                        </div>
-                    </div>
-                `;
-
-                modal.innerHTML = modalContent;
-                document.body.style.overflow = 'hidden';
-                modal.classList.remove('hidden');
-                document.querySelector('.close-modal').addEventListener('click', closeModal);
-                modal.addEventListener('click', function (e)
-                {
-                    if (e.target === modal) closeModal();
-                });
-
-                //add url parameter to the url
-                window.history.replaceState({}, document.title, window.location.pathname + '?id=' + project.ID + '&openContext=true');
-            }
-
-            function closeModal()
-            {
-                //remove all the url parameters
-                window.history.replaceState({}, document.title, window.location.pathname);
-                document.body.style.overflow = 'auto';
-                modal.classList.add('hidden');
-            }
-        })
-        .catch(error => console.error('Error loading project data:', error));
+        }
+    } catch (error) {
+        console.error('Fout bij het laden van portfolio-data:', error);
+    }
 });

@@ -1,142 +1,123 @@
-document.addEventListener('DOMContentLoaded', function ()
+document.addEventListener('DOMContentLoaded', async () =>
 {
-    // Fetch the JSON data
-    fetch('data/portfolio.json') // Adjust the path to where your JSON file is located
-        .then(response => response.json()) // Parse the JSON data
-        .then(data =>
+    const projectImage = document.getElementById('project-image');
+    const projectTitle = document.getElementById('project-title');
+    const projectDescription = document.getElementById('project-description');
+    const headerContainer = document.querySelector('.headerText-projectCard');
+    const nextBtn = document.getElementById('next-arrow');
+    const prevBtn = document.getElementById('prev-arrow');
+
+    // Afbreken indien vereiste carrouselelementen ontbreken
+    if (!projectImage || !projectTitle || !projectDescription) return;
+
+    const projectTaglines = {
+        "Game Design": { text: "Game Design", color: "#FF6633" },
+        "Development": { text: "Development", color: "#007bff" },
+        "Research": { text: "Research", color: "#6f42c1" },
+        "UI/UX Design": { text: "UI/UX Design", color: "#20c997" },
+        "Project Management": { text: "Project Management", color: "#dc3545" }
+    };
+
+    const termToTaglineMap = {
+        "Design": "Game Design",
+        "Designer": "Game Design",
+        "Lead Designer": "Game Design",
+        "Developer": "Development",
+        "Lead Developer": "Development",
+        "Solo Developer": "Development",
+        "Programming": "Development",
+        "Researcher": "Research",
+        "Studied": "Research",
+        "Artificial Intelligence": "Research",
+        "UI": "UI/UX Design",
+        "UX": "UI/UX Design",
+        "Interface": "UI/UX Design",
+        "User Experience": "UI/UX Design",
+        "Project Manager": "Project Management"
+    };
+
+    function renderTaglines(roles = [])
+    {
+        if (!headerContainer) return;
+
+        // Bestaande taglines opschonen
+        headerContainer.querySelectorAll('.tagline-group, .tagline-textWrapper').forEach(el => el.remove());
+
+        const taglineGroup = document.createElement('div');
+        taglineGroup.className = 'tagline-group';
+
+        const matchedTaglines = new Set(
+            roles.map(role => termToTaglineMap[role]).filter(Boolean)
+        );
+
+        matchedTaglines.forEach(taglineKey =>
         {
-            let projects = data.projects;
-            let currentIndex = 0;
+            const config = projectTaglines[taglineKey];
+            if (!config) return;
 
-            // Sort options
-            const customOrder = ["015", "014", "013", "012", "011", "010", "009", "008", "007", "006", "005", "004", "003", "002", "001"];
-            const hiddenProjects = ["012", "011"];
+            const wrapper = document.createElement('div');
+            wrapper.className = 'tagline-textWrapper';
+            wrapper.style.background = config.color;
 
-            // Function to sort by custom array of IDs
-            const sortByCustomOrder = (a, b) =>
-            {
-                const indexA = customOrder.indexOf(a.ID);
-                const indexB = customOrder.indexOf(b.ID);
-                return indexA - indexB;
-            };
+            const p = document.createElement('p');
+            p.className = 'projectTagline-textWrapper';
+            p.textContent = config.text;
 
-            // Exclude hidden projects
-            projects = projects.filter(project => !hiddenProjects.includes(project.ID));
-
-            // Apply sorting: custom sorting is prioritized
-            if (customOrder.length > 0) {
-                projects.sort(sortByCustomOrder);
-            }
-
-            // Tagline mappings
-            const projectTaglines = {
-                "Game Design": { text: "Game Design", color: "#FF6633" },
-                "Development": { text: "Development", color: "#007bff" },
-                "Research": { text: "Research", color: "#6f42c1" },
-                "UI/UX Design": { text: "UI/UX Design", color: "#20c997" },
-                "Project Management": { text: "Project Management", color: "#dc3545" }
-            };
-
-            const termToTaglineMap = {
-                "Design": "Game Design",
-                "Designer": "Game Design",
-                "Developer": "Development",
-                "Lead Designer": "Game Design",
-                "Lead Developer": "Development",
-                "Solo Developer": "Development",
-                "Programming": "Development",
-                "Researcher": "Research",
-                "Studied": "Research",
-                "Artificial Intelligence": "Research",
-                "UI": "UI/UX Design",
-                "UX": "UI/UX Design",
-                "Interface": "UI/UX Design",
-                "User Experience": "UI/UX Design",
-                "Project Manager": "Project Management",
-                "Lead Developer": "Project Management",
-            };
-
-            // Function to set the project taglines dynamically based on the role/description
-            function setProjectTaglineBasedOnTerms(project)
-            {
-                const headerTextContainer = document.querySelector('.headerText-projectCard');
-                const taglineGroup = document.createElement('div');
-                taglineGroup.className = 'tagline-group';
-
-                // Remove any existing tagline-textWrapper elements
-                headerTextContainer.querySelectorAll('.tagline-textWrapper').forEach(taglineWrapper => taglineWrapper.remove());
-                headerTextContainer.querySelectorAll('.tagline-group').forEach(taglineWrapper => taglineWrapper.remove());
-
-                let taglines = new Set();
-                for (let i = 0; i < project.role.length; i++) {
-                    taglines.add(termToTaglineMap[project.role[i]]);
-                }
-
-                // Loop through the terms and create a new tagline-textWrapper for each tagline
-                taglines.forEach((roleTagline) =>
-                {
-                    if (!projectTaglines[roleTagline]) return;
-
-                    // Create a new <div> with class "tagline-textWrapper"
-                    const taglineWrapper = document.createElement('div');
-                    taglineWrapper.className = 'tagline-textWrapper';
-
-                    // Create a new <p> element with the class "project-tagline" for each tagline
-                    const p = document.createElement('p');
-                    p.className = 'projectTagline-textWrapper';
-                    p.innerText = projectTaglines[roleTagline].text;  // Access the 'text' from projectTaglines object
-                    taglineWrapper.style.background = projectTaglines[roleTagline].color;
-
-                    // Append the <p> element (project-tagline) to the new tagline-textWrapper
-                    taglineWrapper.appendChild(p);
-
-                    // Append the new tagline-textWrapper to the headerText-projectCard container
-                    taglineGroup.appendChild(taglineWrapper);
-                });
-
-
-                // append the tagline group to the headerText-projectCard container
-                headerTextContainer.appendChild(taglineGroup);
-            }
-
-            // Function to update the project displayed
-            function updateProject(index)
-            {
-                const project = projects[index];
-                const projectImage = document.getElementById('project-image');
-                const projectTitle = document.getElementById('project-title');
-                const projectDescription = document.getElementById('project-description');
-
-                projectImage.src = project.image;
-                projectTitle.textContent = project.title;
-                projectDescription.innerHTML = `
-                  ${project.description.substring(0, 150)}...
-                  <a href="portfolio.html?id=${project.ID}&openContext=true" class="read-more-btn">Read More</a>
-              `;
-                projectImage.style.backgroundColor = project.color;
-
-                // Set the tagline for the project based on its role/description
-                setProjectTaglineBasedOnTerms(project);
-            }
-
-            // Event listeners for next and previous arrows
-            document.getElementById('next-arrow').addEventListener('click', function ()
-            {
-                currentIndex = (currentIndex + 1) % projects.length;
-                updateProject(currentIndex);
-            });
-
-            document.getElementById('prev-arrow').addEventListener('click', function ()
-            {
-                currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-                updateProject(currentIndex);
-            });
-
-            // Initial project update
-            updateProject(currentIndex);
-        })
-        .catch(error =>
-        {
-            console.error('Error fetching the JSON file:', error);
+            wrapper.appendChild(p);
+            taglineGroup.appendChild(wrapper);
         });
+
+        headerContainer.appendChild(taglineGroup);
+    }
+
+    try {
+        const response = await fetch('data/portfolio.json');
+        if (!response.ok) throw new Error(`HTTP-fout: ${response.status}`);
+
+        const data = await response.json();
+        // Filtert alle projecten die op hidden: true staan
+        const projects = (data.projects || []).filter(p => !p.hidden);
+
+        if (projects.length === 0) return;
+
+        let currentIndex = 0;
+
+        const updateProject = (index) =>
+        {
+            const project = projects[index];
+            const shortDescription = (project.description || '').substring(0, 150);
+
+            projectImage.src = project.image;
+            projectImage.alt = project.title || 'Project preview';
+            projectImage.style.backgroundColor = project.color || 'transparent';
+
+            projectTitle.textContent = project.title;
+            projectDescription.innerHTML = `
+                ${shortDescription}...
+                <a href="portfolio.html?id=${encodeURIComponent(project.ID)}&openContext=true" class="read-more-btn">Read More</a>
+            `;
+
+            const roles = Array.isArray(project.role) ? project.role : [project.role].filter(Boolean);
+            renderTaglines(roles);
+        };
+
+        // Event listeners voor navigatie
+        nextBtn?.addEventListener('click', () =>
+        {
+            currentIndex = (currentIndex + 1) % projects.length;
+            updateProject(currentIndex);
+        });
+
+        prevBtn?.addEventListener('click', () =>
+        {
+            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+            updateProject(currentIndex);
+        });
+
+        // Eerste project direct laden
+        updateProject(currentIndex);
+
+    } catch (error) {
+        console.error('Fout bij het laden van de carrousel:', error);
+    }
 });

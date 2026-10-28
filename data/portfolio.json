@@ -231,6 +231,7 @@
     },
     {
       "ID": "011",
+      "hidden": true,
       "title": "Context Medium Change App",
       "description": "An app concept designed to help visually impaired individuals be more independent by using computer vision and AI technologies like image recognition, object classification, and contextual feedback.",
       "role": "Prototype Developer, Designer",
@@ -246,6 +247,7 @@
     },
     {
       "ID": "012",
+      "hidden": true,
       "title": "Internet of Things Project",
       "description": "",
       "role": "Prototype Developer, Designer",
@@ -261,23 +263,61 @@
     },
     {
       "ID": "013",
-      "title": "DirectX 12 Engine (Under Development)",
-      "description": "As an independent project, I am developing a rendering engine using the DirectX 12 API, focusing on low-level graphics programming and GPU resource management. The project involved creating a complete rendering pipeline, implementing a shader system with HLSL, supporting textures and basic lighting, and optimizing performance. This hands-on experience provided a deep dive into <b>graphics APIs</b>, systems programming, and the architectural complexities of modern rendering engines, culminating in an extensible framework for advanced rendering features. This project highlights my skills in <b>C++</b>, <b>DirectX 12</b>, and <b>graphics programming</b>.",
-      "role": "Developer",
-      "image": "images/projects/DirectX12Engine/DebugTri.png",
-      "color": "#202227",
-      "timeline": "September 2024 - Present",
-      "engine": "",
+      "title": "PwC VR Sustainability Experience",
+      "description": "An immersive Virtual Reality suite developed for PwC Netherlands in collaboration with Rooftop Immersive Studio to reframe corporate sustainability and EU CSRD reporting mandates into tangible, strategic value creation for executives. The 15-minute experience combines a 360° cinematic VR film tracing global supply chains with two hands-on interactive spatial modules: the <b>Biodiversity Module</b>, where selecting everyday consumer goods from virtual shelves reveals their direct impact on global ecosystems and marine life, and the <b>CSRD Regulations Module</b>, where players navigate a physical wooden maze on a skyscraper rooftop to clear regulatory paperwork and transform a gray concrete metropolis into a sustainable green city. As a Freelance Developer, I contributed to the Unity VR development, implementing interactive gameplay mechanics, spatial interactions, and module logic.",
+      "image": "images/projects/PwCVRSustainability/PwCVRSustainability.webp",
+      "color": "#d04a02",
+      "credits": "Developed in collaboration with Rooftop Immersive Studio for PwC Netherlands. Credits: Glenn Wustlich (Director, Animator, Developer), Souhayl Ouchene (Lead Developer), Kian Hamidi (Freelance Developer), Dylan van Sprang (Animator), Tom Vos (Audio).",
+      "timeline": "2024 - Freelance (Rooftop Immersive Studio)",
+      "engine": "Unity",
       "language": [
-        "C++",
-        "HLSL"
+        "C#"
       ],
-      "programs": [],
-      "team_size": 1,
-      "github": "https://github.com/kianniek/DirectX-12-Engine"
+      "programs": [
+        "Visual Studio",
+        "Unity XR Toolkit"
+      ],
+      "team_size": 5,
+      "role": [
+        "Freelance Developer"
+      ],
+      "link": "https://www.pwc.nl/en/onze-organisatie/corporate-sustainability/sustainability-vr-experience.html",
+      "sources": [
+        "https://www.pwc.nl/en/onze-organisatie/corporate-sustainability/sustainability-vr-experience.html",
+        "https://rooftopimmersive.com/projects/the-sustainability-vr-experience/",
+        "https://glennwustlich.nl/works/pwc-vr-sustainability"
+      ],
+      "github": ""
     },
     {
       "ID": "014",
+      "title": "Yuverta XR - “Planet Soil” Learning Module",
+      "description": "An interactive XR and Augmented Reality educational module developed for vocational education provider Yuverta in collaboration with Rooftop Immersive Studio and EMS Films, building on the acclaimed documentary <i>Onder het Maaiveld</i>. Designed to bring soil science to life in the classroom and field, the application transforms tablets, smartphones, and XR devices into underground exploration tools. Students can project interactive 3D soil blocks into their environment, descend into a macro-scale 'soil-safari' to manipulate microbial life and root systems, stress-test water drainage across diverse soil and weather conditions, and diagnose soil health through interactive spatial forensics. As a Freelance Developer, I worked on developing the interactive XR/AR features, 3D spatial interactions, and educational simulation mechanics in Unity.",
+      "image": "images/projects/PlanetSoilLearningModule/Yuverta-Bodem-thumbnail.webp",
+      "color": "#4c8c2b",
+      "credits": "Developed in collaboration with Rooftop Immersive Studio and EMS Films for Yuverta. Credits: Glenn Wustlich (Director, Animator), Kian Hamidi (Freelance Developer), Tom Vos (Audio).",
+      "timeline": "2023 - Freelance (Rooftop Immersive Studio)",
+      "engine": "Unity",
+      "language": [
+        "C#"
+      ],
+      "programs": [
+        "Visual Studio",
+        "Unity XR / AR Foundation"
+      ],
+      "team_size": 4,
+      "role": [
+        "Freelance Developer"
+      ],
+      "link": "https://rooftopimmersive.com/projects/planet-soil-learning-module/",
+      "sources": [
+        "https://rooftopimmersive.com/projects/planet-soil-learning-module/",
+        "https://glennwustlich.nl/works/yuverta-vr"
+      ],
+      "github": ""
+    },
+    {
+      "ID": "015",
       "title": "Social Force Model Simulation",
       "description": "An interactive web-based simulation of the Social Force Model for pedestrian dynamics, based on the 1995 paper by Helbing & Molnár. The simulation demonstrates how pedestrians navigate through environments using forces such as desired direction, social repulsion, and wall avoidance. Users can adjust parameters in real-time, toggle between different map layouts (open corridor, narrow bottleneck, obstacle boxes), and visualize the force vectors acting on each agent. Built with React and HTML5 Canvas, this project showcases emergent crowd behaviors arising from simple individual rules.",
       "image": "images/projects/SocialForceModel/SocialForceModelImage.svg",
@@ -301,7 +341,7 @@
       "github": ""
     },
     {
-      "ID": "015",
+      "ID": "016",
       "title": "Boid Simulation running on a WebGPU (100K at 60Hz)",
       "description": "A research project focused on developing a high-performance Boid simulation using WebGPU, capable of simulating 100,000 agents at 60 frames per second. The project involved implementing the Boid algorithm, which models flocking behavior through simple rules of alignment, cohesion, and separation. By leveraging the parallel processing capabilities of WebGPU, the simulation efficiently manages large numbers of agents while maintaining real-time performance. This project demonstrates expertise in GPU programming, optimization techniques, and the practical application of WebGPU for complex simulations in a web environment.",
       "image": "images/projects/BoidWebGPU/Boids.gif",
@@ -326,53 +366,24 @@
       "github": "https://github.com/kianniek/BoidsOnWebGPU"
     },
     {
-      "ID": "016",
-      "title": "Heroes vs. Robots",
-      "description": "Heroes vs. Robots is an arena combat game built for Meta Horizon platforms, where players use elemental powers to defend civilians against invading robot waves across Mayhem and Sabotage mission modes. As an Intern / Junior Programmer, I collaborated with artists, designers, and sound engineers to prototype and program player attacks and elemental abilities. I also built and structured the core enemy wave system to handle dynamic encounter progression using TypeScript and React.",
-      "image": "images/projects/HeroesVsRobots/HeroesVsRobots.png",
-      "color": "#3b82f6",
-      "timeline": "Vertigo Games Internship",
-      "engine": "Meta Horizon Studio",
-      "language": [
-        "TypeScript",
-        "React"
-      ],
-      "programs": [
-        "Visual Studio Code",
-        "Meta Horizon Engine"
-      ],
-      "team_size": 5,
-      "role": [
-        "Intern / Junior Programmer"
-      ],
-      "link": "https://horizon.meta.com/world/652601194592899/",
-      "github": ""
-    },
-    {
       "ID": "017",
-      "title": "Unannounced Project",
-      "description": "An unannounced commercial game project where I worked as a prototyper and gameplay programmer. Working in a core team of 3 programmers, I built the initial foundational systems and core interactive features from the ground up. My work included rapid iteration, system planning, and implementing core gameplay loops to establish the technical baseline for production.",
-      "image": "images/projects/UnannouncedProject_vertigo-games/MetaHorizonWorlds.png",
-      "color": "#8b5cf6",
-      "timeline": "Professional Portfolio",
-      "engine": "Meta Horizon Studio",
+      "title": "CPU Whitted-Style Ray Tracer",
+      "description": "Whitted-style ray tracer built in C#, featuring physically-based rendering concepts, recursive specular reflections, and realistic refractions. The engine supports multiple type of lights including point lights, spotlights, and area lights with stochastically sampled soft shadows. It implements full Phong shading, procedural and image-based texturing with normal mapping across arbitrary primitives (spheres, planes, and complex triangle meshes), and skydome environment mapping. To achieve real-time and interactive rendering speeds across scenes with over 25,000+ triangles, the engine integrates a Bounding Volume Hierarchy (BVH) with Surface Area Heuristic (SAH) spatial partitioning, multi-threaded row-parallel rendering, and SIMD hardware acceleration (AVX-512). Additional camera features include 6-DOF controls, depth of field with realistic bokeh aperture simulation, autofocus, anti-aliasing with progressive accumulation, dynamic resolution scaling, and an interactive 2D split-screen ray visualization debug view.",
+      "image": "images/projects/RayTracer/RayTracer_RoughnessGrid.png",
+      "color": "#1f2937",
+      "timeline": "2026 - Personal Project",
+      "engine": "Custom Engine",
       "language": [
-        "TypeScript"
+        "C#"
       ],
       "programs": [
         "Visual Studio",
-        "Meta Horizon Studio"
+        "OpenTK"
       ],
-      "team_size": 3,
-      "role": [
-        "Gameplay Programmer",
-        "Prototyper"
-      ],
-      "link": "",
-      "github": ""
+      "github": "https://github.com/kianniek/RayTracer"
     },
     {
-      "ID": "018",
+      "ID": "020",
       "title": "ABCD & E WordPress Website",
       "description": "A custom WordPress website designed and developed for ABCD & E, delivering a professional digital presence and tailored web experience.",
       "image": "images/projects/abcd_en_e/screenshot.png",
@@ -395,6 +406,95 @@
       ],
       "link": "https://abcd-en-e.nl/",
       "github": ""
+    },
+    {
+      "ID": "018",
+      "title": "Heroes vs. Robots",
+      "description": "Heroes vs. Robots is an arena combat game built for Meta Horizon platforms, where players use elemental powers to defend civilians against invading robot waves across Mayhem and Sabotage mission modes. As an Intern / Junior Programmer, I collaborated with artists, designers, and sound engineers to prototype and program player attacks and elemental abilities. I also built and structured the core enemy wave system to handle dynamic encounter progression using TypeScript and React.",
+      "image": "images/projects/HeroesVsRobots/HeroesVsRobots.png",
+      "color": "#3b82f6",
+      "timeline": "Vertigo Games Internship",
+      "engine": "Meta Horizon Studio",
+      "language": [
+        "TypeScript",
+        "React"
+      ],
+      "programs": [
+        "Visual Studio Code",
+        "Meta Horizon Engine"
+      ],
+      "team_size": 5,
+      "role": [
+        "Intern / Junior Programmer"
+      ],
+      "link": "https://horizon.meta.com/world/652601194592899/",
+      "github": ""
+    },
+    {
+      "ID": "019",
+      "title": "Unannounced Project",
+      "description": "An unannounced commercial game project where I worked as a prototyper and gameplay programmer. Working in a core team of 3 programmers, I built the initial foundational systems and core interactive features from the ground up. My work included rapid iteration, system planning, and implementing core gameplay loops to establish the technical baseline for production.",
+      "image": "images/projects/UnannouncedProject_vertigo-games/MetaHorizonWorlds.png",
+      "color": "#8b5cf6",
+      "timeline": "Professional Portfolio",
+      "engine": "Meta Horizon Studio",
+      "language": [
+        "TypeScript"
+      ],
+      "programs": [
+        "Visual Studio",
+        "Meta Horizon Studio"
+      ],
+      "team_size": 3,
+      "role": [
+        "Gameplay Programmer",
+        "Prototyper"
+      ],
+      "link": "",
+      "github": ""
+    },
+    {
+      "ID": "020",
+      "title": "HouseKeepr",
+      "description": "Your all-in-one household agenda and task manager designed to simplify daily home life. From tracking chores and scheduling reminders to coordinating tasks among family members or roommates, HouseKeepr helps keep your household organized and running smoothly. Stay on top of everything, reduce stress, and make home management effortless.",
+      "image": "images/projects/HouseKeepr/portfolio-promo-housekeepr.webp",
+      "color": "#5F2A00",
+      "timeline": "2026 - Personal Project",
+      "language": [
+        "Dart",
+        "Kotlin"
+      ],
+      "programs": [
+        "Android Studio",
+        "Visual Studio",
+        "Figma"
+      ],
+      "link": "",
+      "github": "https://github.com/kianniek/HouseKeepr"
+    },
+    {
+      "ID": "021",
+      "title": "Community Garden Manager",
+      "description": "A collaborative digital twin platform engineered for cooperative urban agricultural spaces to eliminate spatial coordination breakdowns, duplicate resource allocation, and knowledge loss across volunteer cohorts. The application features color-keyed SVG blueprint parsing for physical garden layouts, interactive hardware-accelerated 60 FPS vector canvas navigation, and a dynamic crop sub-zone drawing engine with perimeter collision detection. It integrates client-side Trie-based fuzzy autocomplete, companion planting proximity heuristics, and an immutable event-sourced plot ledger with SHA-256 cryptographic hash chaining for auditable timeline tracking and non-destructive rollbacks. Deployed as a self-hosted instance on an edge Raspberry Pi using Apache reverse proxying and PocketBase with SQLite.",
+      "image": "images/projects/CommunityGarden/promotion-community-garden.jpg",
+      "color": "#2d5a27",
+      "timeline": "2026 - Personal Project",
+      "engine": "Flutter Web",
+      "language": [
+        "Dart"
+      ],
+      "programs": [
+        "Visual Studio Code",
+        "PocketBase",
+        "Apache",
+        "Raspberry Pi"
+      ],
+      "team_size": 1,
+      "role": [
+        "Solo Developer"
+      ],
+      "link": "",
+      "github": "https://github.com/kianniek/CommunityGardenManager"
     }
   ],
   "contact": {
