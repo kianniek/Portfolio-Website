@@ -383,7 +383,7 @@
       "github": "https://github.com/kianniek/RayTracer"
     },
     {
-      "ID": "020",
+      "ID": "018",
       "title": "ABCD & E WordPress Website",
       "description": "A custom WordPress website designed and developed for ABCD & E, delivering a professional digital presence and tailored web experience.",
       "image": "images/projects/abcd_en_e/screenshot.png",
@@ -408,7 +408,7 @@
       "github": ""
     },
     {
-      "ID": "018",
+      "ID": "019",
       "title": "Heroes vs. Robots",
       "description": "Heroes vs. Robots is an arena combat game built for Meta Horizon platforms, where players use elemental powers to defend civilians against invading robot waves across Mayhem and Sabotage mission modes. As an Intern / Junior Programmer, I collaborated with artists, designers, and sound engineers to prototype and program player attacks and elemental abilities. I also built and structured the core enemy wave system to handle dynamic encounter progression using TypeScript and React.",
       "image": "images/projects/HeroesVsRobots/HeroesVsRobots.png",
@@ -431,7 +431,7 @@
       "github": ""
     },
     {
-      "ID": "019",
+      "ID": "020",
       "title": "Unannounced Project",
       "description": "An unannounced commercial game project where I worked as a prototyper and gameplay programmer. Working in a core team of 3 programmers, I built the initial foundational systems and core interactive features from the ground up. My work included rapid iteration, system planning, and implementing core gameplay loops to establish the technical baseline for production.",
       "image": "images/projects/UnannouncedProject_vertigo-games/MetaHorizonWorlds.png",
@@ -454,7 +454,7 @@
       "github": ""
     },
     {
-      "ID": "020",
+      "ID": "021",
       "title": "HouseKeepr",
       "description": "Your all-in-one household agenda and task manager designed to simplify daily home life. From tracking chores and scheduling reminders to coordinating tasks among family members or roommates, HouseKeepr helps keep your household organized and running smoothly. Stay on top of everything, reduce stress, and make home management effortless.",
       "image": "images/projects/HouseKeepr/portfolio-promo-housekeepr.webp",
@@ -473,7 +473,7 @@
       "github": "https://github.com/kianniek/HouseKeepr"
     },
     {
-      "ID": "021",
+      "ID": "022",
       "title": "Community Garden Manager",
       "description": "A collaborative digital twin platform engineered for cooperative urban agricultural spaces to eliminate spatial coordination breakdowns, duplicate resource allocation, and knowledge loss across volunteer cohorts. The application features color-keyed SVG blueprint parsing for physical garden layouts, interactive hardware-accelerated 60 FPS vector canvas navigation, and a dynamic crop sub-zone drawing engine with perimeter collision detection. It integrates client-side Trie-based fuzzy autocomplete, companion planting proximity heuristics, and an immutable event-sourced plot ledger with SHA-256 cryptographic hash chaining for auditable timeline tracking and non-destructive rollbacks. Deployed as a self-hosted instance on an edge Raspberry Pi using Apache reverse proxying and PocketBase with SQLite.",
       "image": "images/projects/CommunityGarden/promotion-community-garden.jpg",
